@@ -12,16 +12,14 @@ export default function ContactPage() {  return (
     <div className="min-h-screen bg-white">
       <Header />
       <ScrollToTop />
-      
-      {/* Hero Section */}
-      <section className="bg-gray-900 text-white py-10 sm:py-16 md:py-20 relative overflow-hidden">
+        {/* Hero Section */}
+      <section className="bg-gray-900 text-white py-12 md:py-16 lg:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="max-w-2xl">
-            <p className="text-xl font-semibold mb-4">Contact Us</p>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-semibold mb-6 leading-tight">
-              Get In Touch With Us
+            <p className="text-lg md:text-xl font-semibold mb-3 md:mb-4">Contact Us</p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 md:mb-6 leading-tight">              Get In Touch With Us
             </h1>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed">
               Have questions or ready to schedule an appointment? Reach out to our friendly team today.
             </p>
           </div>
@@ -34,10 +32,8 @@ export default function ContactPage() {  return (
         <div className="absolute bottom-0 right-0 w-32 h-32 bg-gray-100"></div>
         <div className="absolute bottom-0 right-32 w-32 h-32 bg-teal-400"></div>
         <div className="absolute bottom-32 right-0 w-32 h-32 bg-teal-500"></div>
-      </section>
-
-      {/* Contact Information & Form Section */}
-      <section className="py-20 bg-white">
+      </section>      {/* Contact Information & Form Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
@@ -128,10 +124,8 @@ export default function ContactPage() {  return (
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Office Hours Section */}
-      <section className="py-20 bg-gray-50">
+      </section>      {/* Office Hours Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-teal-800 font-medium mb-4">Office Hours</p>
@@ -177,10 +171,8 @@ export default function ContactPage() {  return (
 </Card>
           </div>
         </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-20 bg-white">
+      </section>      {/* Map Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-teal-800 font-medium mb-4">Our Location</p>
@@ -230,9 +222,8 @@ export default function ContactPage() {  return (
           </div>
         </div>
       </section>
-      
-      {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+        {/* FAQ Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-teal-800 font-medium mb-4">Frequently Asked Questions</p>
