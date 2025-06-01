@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Image from 'next/image';
+import ContactForm from '@/components/common/ContactForm';
 
 export default function ContactPage() {  return (
     <div className="min-h-screen bg-white">
@@ -49,7 +50,13 @@ export default function ContactPage() {  return (
               <div className="space-y-8 mb-12">
                 <div className="flex items-start gap-6">
                   <div className="bg-teal-800 p-4 rounded-lg">
-                    <Image src="/images/img_mappin.svg" alt="Location" width={24} height={24} />
+                    <Image 
+                      src="/images/img_mappin.svg" 
+                      alt="Location" 
+                      width={24} 
+                      height={24}
+                      className="invert" 
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Visit Our Office</h3>
@@ -62,7 +69,13 @@ export default function ContactPage() {  return (
                 
                 <div className="flex items-start gap-6">
                   <div className="bg-teal-800 p-4 rounded-lg">
-                    <Image src="/images/img_phone.svg" alt="Phone" width={24} height={24} />
+                    <Image 
+                      src="/images/img_phone.svg" 
+                      alt="Phone" 
+                      width={24} 
+                      height={24}
+                      className="invert" 
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Call Us</h3>
@@ -75,7 +88,13 @@ export default function ContactPage() {  return (
                 
                 <div className="flex items-start gap-6">
                   <div className="bg-teal-800 p-4 rounded-lg">
-                    <Image src="/images/img_mail.svg" alt="Email" width={24} height={24} />
+                    <Image 
+                      src="/images/img_mail.svg" 
+                      alt="Email" 
+                      width={24} 
+                      height={24}
+                      className="invert" 
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Email Us</h3>
@@ -105,93 +124,7 @@ export default function ContactPage() {  return (
             
             {/* Contact Form */}
             <div>
-              <Card className="p-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-6">Send Us a Message</h3>
-                <form>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                      <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                        First Name
-                      </label>
-                      <input
-                        type="text"
-                        id="firstName"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                        placeholder="Enter your first name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                        Last Name
-                      </label>
-                      <input
-                        type="text"
-                        id="lastName"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                        placeholder="Enter your last name"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                      placeholder="Enter your email address"
-                    />
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                      Service Interested In
-                    </label>                    <select
-                      id="service"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                      defaultValue=""
-                    >
-                      <option value="" disabled>Select a service</option>
-                      <option value="checkup">Regular Checkup</option>
-                      <option value="whitening">Teeth Whitening</option>
-                      <option value="implant">Dental Implants</option>
-                      <option value="orthodontics">Orthodontics</option>
-                      <option value="cosmetic">Cosmetic Dentistry</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Your Message
-                    </label>
-                    <textarea
-                      id="message"
-                      rows="5"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                      placeholder="Tell us about your dental concerns or questions"
-                    ></textarea>
-                  </div>
-                  
-                  <Button variant="primary" size="large" type="submit" className="w-full">
-                    Send Message
-                  </Button>
-                </form>
-              </Card>
+              <ContactForm />
             </div>
           </div>
         </div>
@@ -229,19 +162,19 @@ export default function ContactPage() {  return (
               </ul>
             </Card>
             
-            <Card className="p-8 bg-teal-800 text-white">
-              <h3 className="text-2xl font-semibold mb-6 text-center">Emergency Care</h3>
-              <p className="mb-6 leading-relaxed">
-                Dental emergencies can happen at any time. If you're experiencing severe pain, swelling, or injury, please call our emergency number immediately.
-              </p>
-              <div className="text-center p-4 bg-white bg-opacity-10 rounded-lg mb-6">
-                <p className="text-xl font-semibold">Emergency Hotline</p>
-                <p className="text-2xl font-bold">+62 864 6444 9999</p>
-              </div>
-              <p className="text-sm text-center text-teal-200">
-                *Available 24/7 for dental emergencies
-              </p>
-            </Card>
+       <Card className="p-8 bg-teal-900 text-white">
+  <h3 className="text-2xl font-semibold mb-6 text-center">Emergency Care</h3>
+  <p className="mb-6 leading-relaxed">
+    Dental emergencies can happen at any time. If you're experiencing severe pain, swelling, or injury, please call our emergency number immediately.
+  </p>
+  <div className="text-center p-4 bg-teal-800 rounded-lg mb-6">
+    <p className="text-xl font-semibold">Emergency Hotline</p>
+    <p className="text-2xl font-bold text-white">+62 864 6444 9999</p>
+  </div>
+  <p className="text-sm text-center text-teal-100">
+    *Available 24/7 for dental emergencies
+  </p>
+</Card>
           </div>
         </div>
       </section>
@@ -350,20 +283,7 @@ export default function ContactPage() {  return (
       </section>
       
       {/* CTA Section */}
-      <section className="py-20 bg-teal-800">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <h2 className="text-4xl font-semibold text-white mb-6 leading-tight">
-            Ready to Schedule Your Visit?
-          </h2>
-          <p className="text-gray-200 text-lg mb-8 max-w-3xl mx-auto">
-            Take the first step towards a healthier smile today. Our friendly team is looking forward to meeting you!
-          </p>
-          <Button variant="primary" size="large" className="bg-white text-teal-800 hover:bg-gray-100">
-            Book Your Appointment
-          </Button>
-        </div>
-      </section>
-      
+     
       <Footer />
     </div>
   );
