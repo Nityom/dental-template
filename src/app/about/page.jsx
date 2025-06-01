@@ -7,7 +7,8 @@ import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Image from 'next/image';
 
-export default function AboutPage() {  return (
+export default function AboutPage() {
+  return (
     <div className="min-h-screen bg-white">
       <Header />
       <ScrollToTop />
@@ -32,7 +33,9 @@ export default function AboutPage() {  return (
         <div className="absolute bottom-0 right-0 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-gray-100"></div>
         <div className="absolute bottom-0 right-16 md:right-24 lg:right-32 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-teal-400"></div>
         <div className="absolute bottom-16 md:bottom-24 lg:bottom-32 right-0 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-teal-500"></div>
-      </section>      {/* Our Story Section */}
+      </section>
+      
+      {/* Our Story Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
@@ -62,7 +65,8 @@ export default function AboutPage() {  return (
           </div>
         </div>
       </section>
-        {/* Our Values Section */}
+      
+      {/* Our Values Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
