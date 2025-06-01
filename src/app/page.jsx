@@ -13,53 +13,55 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <ScrollToTop />
-           {/* About Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2 relative order-2 lg:order-1">
-            <div className="bg-gray-900 rounded-lg h-64 sm:h-80 lg:h-96 relative overflow-hidden">
-              <Image 
-                src="/images/img_shape.svg" 
-                alt="Dental clinic interior" 
-                width={456}
-                height={552}
-                className="absolute bottom-0 left-0 w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="lg:w-1/2 order-1 lg:order-2">
-            <p className="text-teal-800 font-medium mb-4">About Us</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
-              Your Trusted Partner For Dental Health
-            </h2>
-            <p className="text-gray-500 text-base sm:text-lg mb-8 leading-relaxed">
-              Purus turpis vivamus sem est blandit. In at egestas id sollicitudin mattis integer aliquet ut tempor. Risus enim nisi ipsum imperdiet. Sed turpis tellus quisque tellus ipsum malesuada fringilla amet elit.
-            </p>
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-teal-800 p-3 sm:p-4 rounded-lg flex-shrink-0">
-                  <Image src="/images/img_users.svg" alt="Experienced dentist" width={34} height={34} />
+               {/* About Section */}
+      <section className="py-6 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-12">
+            <div className="w-full lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0">
+              <p className="text-teal-800 font-medium mb-3">About Us</p>
+              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-gray-900 mb-3 sm:mb-5 leading-tight">
+                Your Trusted Partner For Dental Health
+              </h2>
+              <p className="text-gray-500 text-sm sm:text-base mb-5 leading-relaxed">
+                Purus turpis vivamus sem est blandit. In at egestas id sollicitudin mattis integer aliquet ut tempor. Risus enim nisi ipsum imperdiet. Sed turpis tellus quisque tellus ipsum malesuada fringilla amet elit.
+              </p>
+              <div className="grid grid-cols-1 gap-4 mb-6">
+                <div className="flex items-start gap-3">
+                  <div className="bg-teal-800 p-2.5 rounded-lg flex-shrink-0">
+                    <Image src="/images/img_users.svg" alt="Experienced dentist" width={20} height={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">Experienced Dentist</h3>
+                    <p className="text-gray-500 text-xs sm:text-sm">Purus turpis vivamus sem est blandit in at egestas.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Experienced Dentist</h3>
-                  <p className="text-gray-500 text-sm sm:text-base">Purus turpis vivamus sem est blandit in at egestas.</p>
+                <div className="flex items-start gap-3">
+                  <div className="bg-teal-800 p-2.5 rounded-lg flex-shrink-0">
+                    <Image src="/images/img_thumbsup.svg" alt="Affordable pricing" width={20} height={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">Affordable Pricing</h3>
+                    <p className="text-gray-500 text-xs sm:text-sm">Purus turpis vivamus sem est blandit in at egestas.</p>
+                  </div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="bg-teal-800 p-3 sm:p-4 rounded-lg flex-shrink-0">
-                  <Image src="/images/img_thumbsup.svg" alt="Affordable pricing" width={24} height={24} />
-                </div>
-                <div>
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">Affordable Pricing</h3>
-                  <p className="text-gray-500 text-sm sm:text-base">Purus turpis vivamus sem est blandit in at egestas.</p>
-                </div>
+            </div>
+            <div className="hidden lg:block w-full lg:w-1/2 order-2 lg:order-1">
+              <div className="bg-gray-900 rounded-lg h-40 sm:h-56 lg:h-80 relative overflow-hidden">
+                <Image 
+                  src="/images/img_shape.svg" 
+                  alt="Dental clinic interior" 
+                  width={456}
+                  height={552}
+                  className="absolute bottom-0 left-0 w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
       {/* Video Section */}
-      <section className="py-20 bg-teal-800 relative">
+      <section className="py-12 sm:py-16 lg:py-20 bg-teal-800 relative">
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative">
             <Image 
