@@ -14,11 +14,11 @@ export default function ContactPage() {  return (
       <ScrollToTop />
       
       {/* Hero Section */}
-      <section className="bg-gray-900 text-white py-20 relative overflow-hidden">
+      <section className="bg-gray-900 text-white py-10 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="max-w-2xl">
             <p className="text-xl font-semibold mb-4">Contact Us</p>
-            <h1 className="text-7xl font-semibold mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-semibold mb-6 leading-tight">
               Get In Touch With Us
             </h1>
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
