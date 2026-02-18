@@ -1,14 +1,14 @@
 <svg width="1140" height="600" viewBox="0 0 1140 600" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_6_211)">
 <rect width="1140" height="600" fill="white"/>
-<rect x="-18" y="-53" width="1176" height="785" fill="#010C0D"/>
+<rect x="-18" y="-53" width="1176" height="785" fill="#081A3A"/>
 <rect x="1140" y="99" width="100" height="100" transform="rotate(180 1140 99)" fill="white"/>
 <rect width="100" height="100" transform="matrix(1 0 0 -1 0 99)" fill="white"/>
 <rect opacity="0.2" width="100" height="100" transform="matrix(1 0 0 -1 100 99)" fill="white"/>
-<rect width="100" height="100" transform="matrix(1 0 0 -1 0 199)" fill="#00D3BE"/>
-<rect x="1041" y="501" width="100" height="100" fill="#03272A"/>
-<rect width="100" height="100" transform="translate(520 250)" fill="#F8FAFA"/>
-<path d="M585 300L561 313.856L561 286.144L585 300Z" fill="#010C0D"/>
+<rect width="100" height="100" transform="matrix(1 0 0 -1 0 199)" fill="#25D9FF"/>
+<rect x="1041" y="501" width="100" height="100" fill="#081A3A"/>
+<rect width="100" height="100" transform="translate(520 250)" fill="#F2F8FF"/>
+<path d="M585 300L561 313.856L561 286.144L585 300Z" fill="#081A3A"/>
 </g>
 <defs>
 <clipPath id="clip0_6_211">

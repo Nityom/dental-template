@@ -16,7 +16,7 @@ export default function ContactForm() {
             <input
               type="text"
               id="firstName"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E63D5] focus:border-transparent"
               placeholder="Enter your first name"
             />
           </div>
@@ -27,7 +27,7 @@ export default function ContactForm() {
             <input
               type="text"
               id="lastName"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E63D5] focus:border-transparent"
               placeholder="Enter your last name"
             />
           </div>
@@ -40,7 +40,7 @@ export default function ContactForm() {
           <input
             type="email"
             id="email"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E63D5] focus:border-transparent"
             placeholder="Enter your email address"
           />
         </div>
@@ -52,7 +52,7 @@ export default function ContactForm() {
           <input
             type="tel"
             id="phone"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E63D5] focus:border-transparent"
             placeholder="Enter your phone number"
           />
         </div>
@@ -63,7 +63,7 @@ export default function ContactForm() {
           </label>
           <select
             id="service"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E63D5] focus:border-transparent"
             defaultValue=""
           >
             <option value="" disabled>Select a service</option>
@@ -83,7 +83,7 @@ export default function ContactForm() {
           <textarea
             id="message"
             rows="5"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E63D5] focus:border-transparent"
             placeholder="Tell us about your dental concerns or questions"
           ></textarea>
         </div>

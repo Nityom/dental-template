@@ -9,6 +9,7 @@ module.exports = {
           foreground: "var(--primary-foreground)",
           light: "var(--primary-light)",
           dark: "var(--primary-dark)",
+          DEFAULT: "#1E63D5",
         },
         secondary: {
           background: "var(--secondary-background)",
@@ -28,12 +29,23 @@ module.exports = {
           light: "var(--border-light)",
           dark: "var(--border-dark)",
         },
-        teal: {
-          400: '#4fe5b5',
-          500: '#00d3be',
-          600: '#55e2d4',
-          700: '#053b3f',
-          800: '#03272a',
+        brand: {
+          blue: '#1E63D5',
+          navy: '#081A3A',
+          cyan: '#25D9FF',
+          sky: '#4FAEFF',
+          ice: '#AEEBFF',
+          steel: '#2B88C8',
+        },
+        bg: {
+          main: '#FFFFFF',
+          section: '#F2F8FF',
+          card: '#FAFCFF',
+        },
+        text: {
+          primary: '#1A1A1A',
+          secondary: '#6B7280',
+          light: '#F9FAFB',
         },
       },
       fontFamily: {

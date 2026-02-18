@@ -18,7 +18,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-12">
             <div className="w-full lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0">
-              <p className="text-teal-800 font-medium mb-3">About Us</p>
+              <p className="text-[#1E63D5] font-medium mb-3">About Us</p>
               <h2 className="text-2xl sm:text-3xl lg:text-5xl font-semibold text-gray-900 mb-3 sm:mb-5 leading-tight">
                 Your Trusted Partner For Dental Health
               </h2>
@@ -27,7 +27,7 @@ export default function HomePage() {
               </p>
               <div className="grid grid-cols-1 gap-4 mb-6">
                 <div className="flex items-start gap-3">
-                  <div className="bg-teal-800 p-2.5 rounded-lg flex-shrink-0">
+                  <div className="bg-[#1E63D5] p-2.5 rounded-lg flex-shrink-0">
                     <Image src="/images/img_users.svg" alt="Experienced dentist" width={20} height={20} />
                   </div>
                   <div>
@@ -36,7 +36,7 @@ export default function HomePage() {
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="bg-teal-800 p-2.5 rounded-lg flex-shrink-0">
+                  <div className="bg-[#1E63D5] p-2.5 rounded-lg flex-shrink-0">
                     <Image src="/images/img_thumbsup.svg" alt="Affordable pricing" width={20} height={20} />
                   </div>
                   <div>
@@ -61,7 +61,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* Video Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-teal-800 relative">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#081A3A] relative">
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative">
             <Image 
@@ -79,25 +79,25 @@ export default function HomePage() {
           </div>
         </div>
         {/* Statistics */}
-        <div className=" bg-teal-800 py-16 mt-16">
+        <div className=" bg-[#081A3A] py-16 mt-16">
           <div className="max-w-7xl mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-5xl font-semibold text-white mb-6">Happy Dental Statistic</h2>
+              <h2 className="text-5xl font-semibold text-white mb-6">KS Dental & Aesthetic Clinic Statistics</h2>
               <p className="text-gray-200 text-lg max-w-3xl mx-auto">
                 Purus turpis vivamus sem est blandit. In at egestas id sollicitudin mattis integer aliquet ut tempor. Risus enim nisi ipsum imperdiet. Sed turpis tellus quisque tellus ipsum malesuada fringilla amet elit.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
-                <h3 className="text-7xl font-semibold text-teal-400 mb-4">780+</h3>
+                <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">780+</h3>
                 <p className="text-gray-200 text-lg">Happy Patient</p>
               </div>
               <div>
-                <h3 className="text-7xl font-semibold text-teal-400 mb-4">560+</h3>
+                <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">560+</h3>
                 <p className="text-gray-200 text-lg">Online Appointment</p>
               </div>
               <div>
-                <h3 className="text-7xl font-semibold text-teal-400 mb-4">340+</h3>
+                <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">340+</h3>
                 <p className="text-gray-200 text-lg">Winning Award</p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-teal-800 font-medium mb-4">Our Service</p>
+              <p className="text-[#1E63D5] font-medium mb-4">Our Service</p>
               <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
                 Dental Services for Your Smile
               </h2>
@@ -128,7 +128,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-8">
               <div className="flex items-start gap-6">
-                <div className="bg-teal-800 p-6 rounded-lg">
+                <div className="bg-[#1E63D5] p-6 rounded-lg">
                   <Image src="/images/img_whitening.svg" alt="Teeth whitening" width={44} height={44} />
                 </div>
                 <div>
@@ -140,7 +140,7 @@ export default function HomePage() {
               </div>
               <hr className="border-gray-300" />
               <div className="flex items-start gap-6">
-                <div className="bg-teal-800 p-6 rounded-lg">
+                <div className="bg-[#1E63D5] p-6 rounded-lg">
                   <Image src="/images/img_tooth_insurance.svg" alt="Teeth checkup" width={44} height={44} />
                 </div>
                 <div>
@@ -152,7 +152,7 @@ export default function HomePage() {
               </div>
               <hr className="border-gray-300" />
               <div className="flex items-start gap-6">
-                <div className="bg-teal-800 p-6 rounded-lg">
+                <div className="bg-[#1E63D5] p-6 rounded-lg">
                   <Image src="/images/img_implant.svg" alt="Teeth implants" width={44} height={44} />
                 </div>
                 <div>
@@ -172,7 +172,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* Team Section */}
-      <section className="py-20 bg-teal-800">
+      <section className="py-20 bg-[#081A3A]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <p className="text-gray-300 font-medium mb-4">Our Doctors</p>
@@ -195,12 +195,15 @@ export default function HomePage() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-semibold text-gray-900 mb-2">{doctor.name}</h3>
-                  <p className="text-teal-800 mb-4">{doctor.specialty}</p>
+                  <p className="text-[#1E63D5] mb-4">{doctor.specialty}</p>
                   <div className="flex gap-2">
-                    <div className="bg-teal-800 p-3 rounded-lg">
+                    <div className="bg-[#1E63D5] p-3 rounded-lg">
                       <Image src="/images/img_facebook.svg" alt="Facebook" width={24} height={24} />
                     </div>
-                    <div className="bg-teal-800 p-3 rounded-lg border border-teal-700">
+                    <a href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer" className="bg-[#1E63D5] p-3 rounded-lg border border-[#25D9FF]">
+                      <Image src="/images/img_icon_02.svg" alt="Instagram" width={24} height={24} />
+                    </a>
+                    <div className="bg-[#1E63D5] p-3 rounded-lg border border-[#25D9FF]">
                       <Image src="/images/img_linkedin.svg" alt="LinkedIn" width={24} height={24} />
                     </div>
                   </div>
@@ -215,7 +218,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-teal-800 font-medium mb-4">Testimonials</p>
+              <p className="text-[#1E63D5] font-medium mb-4">Testimonials</p>
               <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
                 What Our Patients Say About Us
               </h2>
@@ -249,14 +252,14 @@ export default function HomePage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-teal-800 font-medium mb-4">How It Works</p>
+            <p className="text-[#1E63D5] font-medium mb-4">How It Works</p>
             <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
               Your Journey to a Healthy Smile Starts Here
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="text-center">
-              <div className="bg-teal-800 p-6 rounded-lg w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+              <div className="bg-[#1E63D5] p-6 rounded-lg w-24 h-24 mx-auto mb-6 flex items-center justify-center">
                 <Image src="/images/img_scedule.svg" alt="Schedule appointment" width={44} height={44} />
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Make Appointment</h3>
@@ -265,7 +268,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-teal-800 p-6 rounded-lg w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+              <div className="bg-[#1E63D5] p-6 rounded-lg w-24 h-24 mx-auto mb-6 flex items-center justify-center">
                 <Image src="/images/img_dentist.svg" alt="Expert care" width={44} height={44} />
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Expert Dental Care</h3>
@@ -274,7 +277,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="text-center">
-              <div className="bg-teal-800 p-6 rounded-lg w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+              <div className="bg-[#1E63D5] p-6 rounded-lg w-24 h-24 mx-auto mb-6 flex items-center justify-center">
                 <Image src="/images/img_whitening.svg" alt="Radiate confidence" width={44} height={44} />
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Radiate Confidence</h3>

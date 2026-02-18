@@ -4,29 +4,39 @@
 
 @layer base {
   :root {
-    /* Primary Colors */
-    --primary-background: #053b3f;
+    /* Primary Brand Colors */
+    --primary-background: #1E63D5;
     --primary-foreground: #ffffff;
-    --primary-light: #4fe5b5;
-    --primary-dark: #03272a;
+    --primary-light: #4FAEFF;
+    --primary-dark: #081A3A;
 
     /* Secondary Colors */
     --secondary-background: #ffffff;
-    --secondary-foreground: #010c0d;
-    --secondary-light: #f8fafa;
-    --secondary-dark: #808586;
+    --secondary-foreground: #1A1A1A;
+    --secondary-light: #F2F8FF;
+    --secondary-dark: #6B7280;
 
     /* Accent Colors */
-    --accent-color: #4fe5b5;
-    --accent-foreground: #010c0d;
-    --accent-light: #55e2d4;
-    --accent-dark: #00d3be;
+    --accent-color: #25D9FF;
+    --accent-foreground: #081A3A;
+    --accent-light: #AEEBFF;
+    --accent-dark: #2B88C8;
+
+    /* Background Colors */
+    --bg-main: #FFFFFF;
+    --bg-section: #F2F8FF;
+    --bg-card: #FAFCFF;
 
     /* Border Colors */
-    --border-primary: #cdd8d9;
-    --border-secondary: #053b3f;
-    --border-light: #e0e0e0;
-    --border-dark: #666666;
+    --border-primary: #E5EAF0;
+    --border-secondary: #D1D9E6;
+    --border-light: #E5EAF0;
+    --border-dark: #081A3A;
+
+    /* Text Colors */
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B7280;
+    --text-light: #F9FAFB;
   }
 }
 

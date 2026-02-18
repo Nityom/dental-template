@@ -23,7 +23,7 @@ export default function ServicesPage() {  return (
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               From preventive care to advanced treatments, we offer a full range of dental services to keep your smile healthy and beautiful.
             </p>
-            <Button variant="primary" size="large" className="bg-teal-800 hover:bg-teal-700">
+            <Button variant="primary" size="large" className="bg-[#1E63D5] hover:bg-[#25D9FF]">
               Make Appointment
               <Image src="/images/img_arrowright.svg" alt="Arrow" width={24} height={24} className="ml-2" />
             </Button>
@@ -35,20 +35,20 @@ export default function ServicesPage() {  return (
         <div className="absolute top-32 right-32 w-32 h-32 bg-white opacity-5"></div>
         <div className="absolute top-64 right-0 w-32 h-32 bg-white opacity-20"></div>
         <div className="absolute bottom-0 right-0 w-32 h-32 bg-gray-100"></div>
-        <div className="absolute bottom-0 right-32 w-32 h-32 bg-teal-400"></div>
-        <div className="absolute bottom-32 right-0 w-32 h-32 bg-teal-500"></div>
+        <div className="absolute bottom-0 right-32 w-32 h-32 bg-[#25D9FF]"></div>
+        <div className="absolute bottom-32 right-0 w-32 h-32 bg-[#4FAEFF]"></div>
       </section>
 
       {/* Services Overview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-teal-800 font-medium mb-4">Our Specialties</p>
+            <p className="text-[#1E63D5] font-medium mb-4">Our Specialties</p>
             <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
               What We Offer
             </h2>
             <p className="text-gray-500 text-lg max-w-3xl mx-auto">
-              At Happy Dental, we provide comprehensive dental services using the latest technology and techniques to ensure the best outcomes for our patients.
+              At KS Dental & Aesthetic Clinic, we provide comprehensive dental services using the latest technology and techniques to ensure the best outcomes for our patients.
             </p>
           </div>
           
@@ -86,14 +86,14 @@ export default function ServicesPage() {  return (
               }
             ].map((service, index) => (
               <Card key={index} className="p-8 hover:shadow-xl transition-shadow duration-300">
-                <div className="bg-teal-800 p-6 rounded-lg w-16 h-16 mb-6 flex items-center justify-center">
+                <div className="bg-[#1E63D5] p-6 rounded-lg w-16 h-16 mb-6 flex items-center justify-center">
                   <Image src={service.icon} alt={service.title} width={32} height={32} />
                 </div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">{service.title}</h3>
                 <p className="text-gray-500 leading-relaxed mb-6">
                   {service.description}
                 </p>
-                <a href="#" className="text-teal-800 font-medium flex items-center">
+                <a href="#" className="text-[#1E63D5] font-medium flex items-center">
                   Learn More
                   <Image src="/images/img_arrowright.svg" alt="Arrow" width={16} height={16} className="ml-2" />
                 </a>
@@ -108,7 +108,7 @@ export default function ServicesPage() {  return (
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-teal-800 font-medium mb-4">Featured Service</p>
+              <p className="text-[#1E63D5] font-medium mb-4">Featured Service</p>
               <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
                 Advanced Teeth Whitening
               </h2>
@@ -117,7 +117,7 @@ export default function ServicesPage() {  return (
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
-                  <div className="bg-teal-800 p-1 rounded-full mr-3 mt-1">
+                  <div className="bg-[#1E63D5] p-1 rounded-full mr-3 mt-1">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                     </svg>
@@ -125,7 +125,7 @@ export default function ServicesPage() {  return (
                   <span className="text-gray-500">Professional-strength whitening agents</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-teal-800 p-1 rounded-full mr-3 mt-1">
+                  <div className="bg-[#1E63D5] p-1 rounded-full mr-3 mt-1">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                     </svg>
@@ -133,7 +133,7 @@ export default function ServicesPage() {  return (
                   <span className="text-gray-500">Customized treatment plans</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-teal-800 p-1 rounded-full mr-3 mt-1">
+                  <div className="bg-[#1E63D5] p-1 rounded-full mr-3 mt-1">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                     </svg>
@@ -141,7 +141,7 @@ export default function ServicesPage() {  return (
                   <span className="text-gray-500">Quick, noticeable results</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="bg-teal-800 p-1 rounded-full mr-3 mt-1">
+                  <div className="bg-[#1E63D5] p-1 rounded-full mr-3 mt-1">
                     <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
                     </svg>
@@ -176,7 +176,7 @@ export default function ServicesPage() {  return (
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-teal-800 font-medium mb-4">Our Process</p>
+            <p className="text-[#1E63D5] font-medium mb-4">Our Process</p>
             <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
               How We Work
             </h2>
@@ -209,14 +209,14 @@ export default function ServicesPage() {  return (
               }
             ].map((step, index) => (
               <div key={index} className="text-center relative">
-                <div className="bg-teal-800 p-6 rounded-lg w-20 h-20 mx-auto mb-6 flex items-center justify-center relative z-10">
+                <div className="bg-[#1E63D5] p-6 rounded-lg w-20 h-20 mx-auto mb-6 flex items-center justify-center relative z-10">
                   <Image src={step.icon} alt={step.title} width={40} height={40} />
-                  <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-teal-600 text-white flex items-center justify-center font-semibold">
+                  <div className="absolute -top-4 -right-4 w-8 h-8 rounded-full bg-[#25D9FF] text-white flex items-center justify-center font-semibold">
                     {index + 1}
                   </div>
                 </div>
                 {index < 3 && (
-                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-teal-600"></div>
+                  <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-[#25D9FF]"></div>
                 )}
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">{step.title}</h3>
                 <p className="text-gray-500 leading-relaxed">
@@ -232,7 +232,7 @@ export default function ServicesPage() {  return (
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-teal-800 font-medium mb-4">Pricing</p>
+            <p className="text-[#1E63D5] font-medium mb-4">Pricing</p>
             <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
               Transparent Fee Structure
             </h2>
@@ -267,8 +267,8 @@ export default function ServicesPage() {  return (
               </Button>
             </Card>
             
-            <Card className="p-8 border-2 border-teal-600 shadow-lg">
-              <div className="absolute top-0 right-0 bg-teal-800 text-white py-1 px-4 text-sm font-medium rounded-bl-lg">
+            <Card className="p-8 border-2 border-[#1E63D5] shadow-lg">
+              <div className="absolute top-0 right-0 bg-[#1E63D5] text-white py-1 px-4 text-sm font-medium rounded-bl-lg">
                 Popular
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-6">Cosmetic Services</h3>

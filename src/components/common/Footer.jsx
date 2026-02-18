@@ -20,7 +20,7 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className="bg-teal-800 text-white py-10 md:py-16"
+      className="bg-[#081A3A] text-white py-10 md:py-16"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
@@ -30,15 +30,15 @@ const Footer = () => {
         className="max-w-7xl mx-auto px-4"
         variants={staggerContainer(0.1, 0.2)}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Company Info */}
           <motion.div 
             className="mb-8 md:mb-0"
             variants={navItemAnimation}
           >
             <Link href="/" className="text-xl md:text-2xl font-bold mb-4 md:mb-6 block">
-              <span className="text-white font-extrabold">HAPPY</span>
-              <span className="text-teal-400 font-light">DENTAL</span>
+              <span className="text-white font-extrabold">KS DENTAL</span>
+              <span className="text-[#25D9FF] font-light"> & AESTHETIC</span>
             </Link>
             <motion.p 
               className="text-gray-300 mb-6 leading-relaxed text-sm md:text-base"
@@ -51,21 +51,23 @@ const Footer = () => {
               variants={staggerContainer(0.1, 0)}
             >
               <motion.div 
-                className="bg-teal-700 p-2 md:p-3 rounded-lg"
+                className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Image src="/images/img_twitter.svg" alt="Twitter" width={16} height={16} />
               </motion.div>
+              <Link href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer">
+                <motion.div 
+                  className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Image src="/images/img_icon_02.svg" alt="Instagram" width={16} height={16} />
+                </motion.div>
+              </Link>
               <motion.div 
-                className="bg-teal-700 p-2 md:p-3 rounded-lg"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Image src="/images/img_icon_02.svg" alt="Instagram" width={16} height={16} />
-              </motion.div>
-              <motion.div 
-                className="bg-teal-700 p-2 md:p-3 rounded-lg"
+                className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -76,7 +78,7 @@ const Footer = () => {
 
           {/* Navigation Section */}
           <motion.div 
-            className="border-b border-teal-700 md:border-0 pb-4 md:pb-0"
+            className="border-b border-[#1E63D5] md:border-0 pb-4 md:pb-0"
             variants={navItemAnimation}
           >
             <div 
@@ -123,7 +125,7 @@ const Footer = () => {
           </motion.div>
 
           {/* Services - Mobile Accordion, Desktop Regular */}
-          <div className="border-b border-teal-700 md:border-0 pb-4 md:pb-0">
+          <div className="border-b border-[#1E63D5] md:border-0 pb-4 md:pb-0">
             <div 
               className="flex justify-between items-center mb-4 md:mb-6 cursor-pointer md:cursor-default"
               onClick={() => toggleSection('services')}
@@ -150,7 +152,7 @@ const Footer = () => {
           </div>
 
           {/* Resources - Mobile Accordion, Desktop Regular */}
-          <div className="border-b border-teal-700 md:border-0 pb-4 md:pb-0">
+          {/* <div className="border-b border-[#1E63D5] md:border-0 pb-4 md:pb-0">
             <div 
               className="flex justify-between items-center mb-4 md:mb-6 cursor-pointer md:cursor-default"
               onClick={() => toggleSection('resources')}
@@ -174,21 +176,21 @@ const Footer = () => {
               <li><Link href="/docs" className="text-gray-300 hover:text-white transition-colors">Documentation</Link></li>
               <li><Link href="/blog" className="text-gray-300 hover:text-white transition-colors">Blog & Guide</Link></li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* Bottom Bar */}
         <motion.div 
-          className="bg-teal-400 py-4 -mx-4 px-4"
+          className="bg-[#25D9FF] py-4 -mx-4 px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center text-xs md:text-sm text-gray-900">
             <div className="flex flex-col md:flex-row items-center md:gap-4 mb-4 md:mb-0 text-center md:text-left">
-              <motion.span variants={navItemAnimation}>Copyright © 2023 Happy Dental</motion.span>
+              <motion.span variants={navItemAnimation}>Copyright © 2026 KS Dental & Aesthetic Clinic</motion.span>
               <div className="w-px h-3 bg-gray-900 hidden md:block"></div>
-              <motion.span variants={navItemAnimation}>Design by TokoTema</motion.span>
+              <motion.span variants={navItemAnimation}>All rights reserved.</motion.span>
             </div>
             <div className="flex items-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }}>

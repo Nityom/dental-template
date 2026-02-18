@@ -24,7 +24,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            Happy Dental
+            KS Dental & Aesthetic Clinic
           </motion.p>
           <motion.h1 
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 md:mb-6 leading-tight"
@@ -47,7 +47,7 @@ const HeroSection = () => {
             whileTap="tap"
             variants={buttonAnimation}
           >
-            <Button variant="primary" size="large" className="bg-teal-800 hover:bg-teal-700 w-full sm:w-auto">
+            <Button variant="primary" size="large" className="bg-[#1E63D5] hover:bg-[#25D9FF] w-full sm:w-auto">
               Make Appointment
               <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
             </Button>
@@ -81,13 +81,13 @@ const HeroSection = () => {
         transition={{ duration: 0.8, delay: 0.4 }}
       />
       <motion.div 
-        className="absolute bottom-0 right-16 md:right-24 lg:right-32 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-teal-400"
+        className="absolute bottom-0 right-16 md:right-24 lg:right-32 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-[#25D9FF]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
       />
       <motion.div 
-        className="absolute bottom-16 md:bottom-24 lg:bottom-32 right-0 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-teal-500"
+        className="absolute bottom-16 md:bottom-24 lg:bottom-32 right-0 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-[#4FAEFF]"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
