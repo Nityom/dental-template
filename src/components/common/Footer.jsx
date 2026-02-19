@@ -47,7 +47,7 @@ const Footer = () => {
               className="text-gray-300 mb-6 leading-relaxed text-sm md:text-base"
               variants={navItemAnimation}
             >
-              Amet quis rhoncus turpis phasellus ut dui. Volutpat turpis tortor blandit eget nibh ac lacus vitae purus. Sagittis tortor fermentum.
+              Your trusted partner for comprehensive dental and aesthetic care. We're dedicated to creating beautiful, healthy smiles using advanced technology and personalized treatment.
             </motion.p>
             <motion.div 
               className="flex gap-3"

@@ -115,9 +115,9 @@ export default function ContactPage() {  return (
                   <a href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer" className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
                     <Image src="/images/img_icon_02.svg" alt="Instagram" width={24} height={24} />
                   </a>
-                  <div className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
+                  {/* <div className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
                     <Image src="/images/img_linkedin.svg" alt="LinkedIn" width={24} height={24} />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

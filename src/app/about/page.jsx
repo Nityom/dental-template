@@ -148,9 +148,9 @@ export default function AboutPage() {
                     <a href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer" className="bg-[#1E63D5] p-1.5 sm:p-2 rounded-lg">
                       <Image src="/images/img_icon_02.svg" alt="Instagram" width={18} height={18} />
                     </a>
-                    <div className="bg-[#1E63D5] p-1.5 sm:p-2 rounded-lg">
+                    {/* <div className="bg-[#1E63D5] p-1.5 sm:p-2 rounded-lg">
                       <Image src="/images/img_linkedin.svg" alt="LinkedIn" width={18} height={18} />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </Card>

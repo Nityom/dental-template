@@ -23,7 +23,7 @@ export default function HomePage() {
                 Your Trusted Partner For Dental Health
               </h2>
               <p className="text-gray-500 text-sm sm:text-base mb-5 leading-relaxed">
-                Purus turpis vivamus sem est blandit. In at egestas id sollicitudin mattis integer aliquet ut tempor. Risus enim nisi ipsum imperdiet. Sed turpis tellus quisque tellus ipsum malesuada fringilla amet elit.
+                At KS Dental & Aesthetic Clinic, we combine cutting-edge dental technology with compassionate care to deliver exceptional results. With over 15 years of experience, our dedicated team of specialists is committed to providing comprehensive dental and aesthetic treatments tailored to your unique needs.
               </p>
               <div className="grid grid-cols-1 gap-4 mb-6">
                 <div className="flex items-start gap-3">
@@ -32,7 +32,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">Experienced Dentist</h3>
-                    <p className="text-gray-500 text-xs sm:text-sm">Purus turpis vivamus sem est blandit in at egestas.</p>
+                    <p className="text-gray-500 text-xs sm:text-sm">Our team of highly qualified dentists brings years of expertise in advanced dental care and aesthetic treatments.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -41,7 +41,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1">Affordable Pricing</h3>
-                    <p className="text-gray-500 text-xs sm:text-sm">Purus turpis vivamus sem est blandit in at egestas.</p>
+                    <p className="text-gray-500 text-xs sm:text-sm">Quality dental care shouldn't break the bank. We offer transparent pricing and flexible payment options.</p>
                   </div>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <h2 className="text-5xl font-semibold text-white mb-6">KS Dental & Aesthetic Clinic Statistics</h2>
               <p className="text-gray-200 text-lg max-w-3xl mx-auto">
-                Purus turpis vivamus sem est blandit. In at egestas id sollicitudin mattis integer aliquet ut tempor. Risus enim nisi ipsum imperdiet. Sed turpis tellus quisque tellus ipsum malesuada fringilla amet elit.
+                Our commitment to excellence is reflected in the thousands of satisfied patients, successful treatments, and recognition we've received. These numbers represent real people whose lives we've positively impacted through quality dental care.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -114,7 +114,7 @@ export default function HomePage() {
                 Dental Services for Your Smile
               </h2>
               <p className="text-gray-500 text-lg mb-8 leading-relaxed">
-                Purus turpis vivamus sem est blandit. In at egestas id sollicitudin mattis integer aliquet ut tempor. Risus enim nisi ipsum imperdiet. Sed turpis tellus quisque tellus ipsum malesuada.
+                From routine checkups to advanced cosmetic procedures, our comprehensive range of dental and aesthetic services ensures that all your oral health and beauty needs are met under one roof. We use the latest technology to provide safe, effective, and comfortable treatments.
               </p>
               <div className="bg-gray-900 rounded-lg h-80 relative">
                 <Image 
@@ -134,7 +134,7 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-3">Teeth Whitening</h3>
                   <p className="text-gray-500 leading-relaxed">
-                    Vitae id at ac proin accumsan euismod egestas tortor fermentum. Porta odio erat diam.
+                    Professional teeth whitening treatments that brighten your smile safely and effectively, removing years of stains for a confident, radiant appearance.
                   </p>
                 </div>
               </div>
@@ -146,7 +146,7 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-3">Teeth Checkup</h3>
                   <p className="text-gray-500 leading-relaxed">
-                    Vitae id at ac proin accumsan euismod egestas tortor fermentum. Porta odio erat diam.
+                    Regular dental checkups are essential for maintaining optimal oral health. Our comprehensive examinations help detect and prevent dental issues early.
                   </p>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default function HomePage() {
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-3">Teeth Implants</h3>
                   <p className="text-gray-500 leading-relaxed">
-                    Vitae id at ac proin accumsan euismod egestas tortor fermentum. Porta odio erat diam.
+                    Permanent dental implants provide natural-looking and feeling tooth replacements that restore both function and aesthetics to your smile.
                   </p>
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function HomePage() {
               Meet Our Expert Dental Team
             </h2>
             <p className="text-gray-200 text-lg max-w-4xl mx-auto">
-              Purus turpis vivamus sem est blandit. In at egestas id sollicitudin mattis integer aliquet ut tempor. Risus enim nisi ipsum imperdiet. Sed turpis tellus quisque tellus ipsum.
+              Our experienced dental professionals are dedicated to providing personalized care using the latest techniques and technology. Each member of our team is committed to making your dental experience comfortable and ensuring the best possible outcomes.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -203,9 +203,9 @@ export default function HomePage() {
                     <a href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer" className="bg-[#1E63D5] p-3 rounded-lg border border-[#25D9FF]">
                       <Image src="/images/img_icon_02.svg" alt="Instagram" width={24} height={24} />
                     </a>
-                    <div className="bg-[#1E63D5] p-3 rounded-lg border border-[#25D9FF]">
+                    {/* <div className="bg-[#1E63D5] p-3 rounded-lg border border-[#25D9FF]">
                       <Image src="/images/img_linkedin.svg" alt="LinkedIn" width={24} height={24} />
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </Card>
@@ -226,13 +226,13 @@ export default function HomePage() {
                 <Image src="/images/img_icon.svg" alt="Quote icon" width={67} height={84} />
               </div>
               <p className="text-gray-500 text-lg mb-8 leading-relaxed">
-                Purus turpis vivamus sem est blandit. In at egestas id sollicitudin mattis integer aliquet ut tempor. Risus enim nisi ipsum imperdiet. Sed turpis tellus quisque tellus ipsum malesuada.
+                The team at KS Dental & Aesthetic Clinic transformed my smile completely! I was nervous about getting dental implants, but the staff made me feel comfortable throughout the entire process. The results exceeded my expectations, and I couldn't be happier with my new confident smile.
               </p>
               <div className="flex items-center gap-4">
                 <div className="w-20 h-20 bg-gray-900 rounded-full"></div>
                 <div>
                   <h4 className="text-2xl font-semibold text-gray-900">Jose Turner</h4>
-                  <p className="text-gray-500">Customer</p>
+                  <p className="text-gray-500">Satisfied Patient</p>
                 </div>
               </div>
             </div>
@@ -264,7 +264,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Make Appointment</h3>
               <p className="text-gray-500 leading-relaxed">
-                Etiam fusce arcu ac auctor nisl purus consectetur. Eu viverra ultricies sit.
+                Schedule your visit online or call us directly. Choose a convenient time that works with your schedule, and we'll be ready to welcome you.
               </p>
             </div>
             <div className="text-center">
@@ -273,7 +273,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Expert Dental Care</h3>
               <p className="text-gray-500 leading-relaxed">
-                Etiam fusce arcu ac auctor nisl purus consectetur. Eu viverra ultricies sit.
+                Receive personalized treatment from our experienced professionals using state-of-the-art equipment and proven techniques for optimal results.
               </p>
             </div>
             <div className="text-center">
@@ -282,7 +282,7 @@ export default function HomePage() {
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Radiate Confidence</h3>
               <p className="text-gray-500 leading-relaxed">
-                Etiam fusce arcu ac auctor nisl purus consectetur. Eu viverra ultricies sit.
+                Enjoy your beautiful, healthy smile and the confidence it brings. We're here to support your ongoing dental health journey.
               </p>
             </div>
           </div>

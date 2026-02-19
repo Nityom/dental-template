@@ -41,7 +41,7 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              Mauris risus adipiscing cursus consequat. Sit duis lobortis diam non. In in suspendisse quam in vestibulum diam scelerisque vulputate id. In tellus nibh volutpat dignissim.
+              Experience exceptional dental care and aesthetic treatments with state-of-the-art technology. Our expert team is dedicated to providing personalized care that exceeds your expectations, ensuring healthy smiles and confident futures.
             </motion.p>
             <motion.div
               whileHover="hover"
@@ -56,7 +56,7 @@ const HeroSection = () => {
           </motion.div>
           
           <motion.div 
-            className="relative h-64 md:h-96 lg:h-[500px]"
+            className="relative h-64 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -65,7 +65,7 @@ const HeroSection = () => {
               src="/images/hero.png" 
               alt="KS Dental & Aesthetic Clinic" 
               fill
-              className="object-contain"
+              className="object-cover rounded-2xl"
               priority
             />
           </motion.div>

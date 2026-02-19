@@ -121,7 +121,7 @@ const Header = () => {
                 size="medium" 
                 className="hidden sm:flex bg-[#1E63D5] hover:bg-[#25D9FF] px-4 py-2 md:px-6 md:py-3"
               >
-                Get Started
+                Book Appointment
                 <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
               </Button>
             </motion.div>
@@ -227,7 +227,7 @@ const Header = () => {
                     size="medium"
                     className="w-full bg-[#1E63D5] hover:bg-[#25D9FF] flex items-center justify-center"
                   >
-                    Get Started
+                    Book Appointment
                     <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
                   </Button>
                 </motion.div>
