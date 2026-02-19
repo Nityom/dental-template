@@ -14,45 +14,62 @@ const HeroSection = () => {
       variants={heroContentAnimation}
     >
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <motion.div 
-          className="max-w-2xl"
-          variants={heroContentAnimation}
-        >
-          <motion.p 
-            className="text-lg md:text-xl font-semibold mb-3 md:mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <motion.div 
+            className="max-w-2xl"
+            variants={heroContentAnimation}
           >
+            <motion.p 
+              className="text-lg md:text-xl font-semibold mb-3 md:mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
             KS Dental & Aesthetic Clinic
-          </motion.p>
-          <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 md:mb-6 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            Your Smile, Our Priority.
-          </motion.h1>
-          <motion.p 
-            className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-          >
-            Mauris risus adipiscing cursus consequat. Sit duis lobortis diam non. In in suspendisse quam in vestibulum diam scelerisque vulputate id. In tellus nibh volutpat dignissim.
-          </motion.p>
-          <motion.div
-            whileHover="hover"
-            whileTap="tap"
-            variants={buttonAnimation}
-          >
-            <Button variant="primary" size="large" className="bg-[#1E63D5] hover:bg-[#25D9FF] w-full sm:w-auto">
-              Make Appointment
-              <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
-            </Button>
+            </motion.p>
+            <motion.h1 
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold mb-4 md:mb-6 leading-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              Your Smile, Our Priority.
+            </motion.h1>
+            <motion.p 
+              className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              Mauris risus adipiscing cursus consequat. Sit duis lobortis diam non. In in suspendisse quam in vestibulum diam scelerisque vulputate id. In tellus nibh volutpat dignissim.
+            </motion.p>
+            <motion.div
+              whileHover="hover"
+              whileTap="tap"
+              variants={buttonAnimation}
+            >
+              <Button variant="primary" size="large" className="bg-[#1E63D5] hover:bg-[#25D9FF] w-full sm:w-auto">
+                Make Appointment
+                <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
+              </Button>
+            </motion.div>
           </motion.div>
-        </motion.div>
+          
+          <motion.div 
+            className="relative h-64 md:h-96 lg:h-[500px]"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Image 
+              src="/images/hero.png" 
+              alt="KS Dental & Aesthetic Clinic" 
+              fill
+              className="object-contain"
+              priority
+            />
+          </motion.div>
+        </div>
       </div>
       
       {/* Decorative Elements - Hidden on small screens, shown on larger screens */}

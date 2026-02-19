@@ -77,7 +77,10 @@ const Header = () => {
                 priority
               />
               <div className="flex flex-col">
-                <span className="text-lg md:text-xl font-bold text-[#1E63D5]">KS Dental</span>
+                <span className="text-lg md:text-xl font-bold">
+                  <span className="text-gray-500">KS</span>
+                  <span className="text-[#1E63D5]"> Dental</span>
+                </span>
                 <span className="text-xs md:text-sm text-gray-600">& Aesthetic Clinic</span>
               </div>
             </Link>

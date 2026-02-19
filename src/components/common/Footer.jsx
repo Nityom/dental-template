@@ -37,7 +37,10 @@ const Footer = () => {
             variants={navItemAnimation}
           >
             <Link href="/" className="text-xl md:text-2xl font-bold mb-4 md:mb-6 block">
-              <span className="text-white font-extrabold">KS DENTAL</span>
+              <span className="font-extrabold">
+                <span className="text-gray-400">KS</span>
+                <span className="text-white"> DENTAL</span>
+              </span>
               <span className="text-[#25D9FF] font-light"> & AESTHETIC</span>
             </Link>
             <motion.p 

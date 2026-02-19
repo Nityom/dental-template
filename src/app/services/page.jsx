@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import Button from '@/components/ui/Button';
@@ -7,7 +7,14 @@ import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Image from 'next/image';
 
-export default function ServicesPage() {  return (
+export default function ServicesPage() {
+  const [expandedCard, setExpandedCard] = useState(null);
+
+  const toggleCard = (index) => {
+    setExpandedCard(expandedCard === index ? null : index);
+  };
+
+  return (
     <div className="min-h-screen bg-white">
       <Header />
       <ScrollToTop />
@@ -55,48 +62,392 @@ export default function ServicesPage() {  return (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
-                icon: "/images/img_whitening.svg",
-                title: "Teeth Whitening",
-                description: "Professional whitening treatments that brighten your smile and remove years of stains safely and effectively."
+                image: "/services/general_dental_checkup.png",
+                title: "General Dental Checkup",
+                description: "Comprehensive oral examinations to assess your overall dental health and detect potential issues early.",
+                details: {
+                  overview: "Regular dental checkups are the cornerstone of preventive dental care. Our comprehensive examinations include thorough evaluations of your teeth, gums, and overall oral health.",
+                  benefits: [
+                    "Early detection of cavities and tooth decay",
+                    "Identification of gum disease in early stages",
+                    "Oral cancer screening",
+                    "Professional teeth cleaning and plaque removal",
+                    "Personalized oral hygiene recommendations"
+                  ],
+                  process: "During your checkup, our experienced dentists will perform a complete examination, take necessary X-rays, clean your teeth, and discuss any concerns or treatment recommendations.",
+                  duration: "30-60 minutes",
+                  frequency: "Every 6 months recommended"
+                }
               },
               {
-                icon: "/images/img_tooth_insurance.svg",
-                title: "Preventive Care",
-                description: "Regular checkups, cleanings, and evaluations to prevent dental issues before they start."
+                image: "/services/dental_fillings.png",
+                title: "Dental Fillings",
+                description: "High-quality fillings to restore damaged teeth and prevent further decay using the latest materials.",
+                details: {
+                  overview: "We use advanced composite materials that match your natural tooth color, providing both functional restoration and aesthetic appeal.",
+                  benefits: [
+                    "Stops cavity progression",
+                    "Restores tooth function",
+                    "Natural-looking results",
+                    "Long-lasting durability",
+                    "Prevents further damage"
+                  ],
+                  process: "We remove the decayed portion, clean the area, and fill it with high-quality composite material that bonds to your tooth structure.",
+                  duration: "30-60 minutes per tooth",
+                  frequency: "As needed based on examination"
+                }
               },
               {
-                icon: "/images/img_implant.svg",
+                image: "/services/teeth_allign.png",
+                title: "Teeth Alignment Orthodontics",
+                description: "Advanced orthodontic solutions including braces and aligners to straighten your teeth and improve your bite.",
+                details: {
+                  overview: "We offer both traditional braces and modern clear aligner systems to correct misaligned teeth and improve your smile.",
+                  benefits: [
+                    "Improved smile aesthetics",
+                    "Better bite alignment",
+                    "Easier cleaning and maintenance",
+                    "Enhanced oral health",
+                    "Boosted confidence"
+                  ],
+                  process: "After a comprehensive assessment, we create a customized treatment plan using either braces or clear aligners, with regular adjustments.",
+                  duration: "12-24 months average",
+                  frequency: "Monthly check-ups during treatment"
+                }
+              },
+              {
+                image: "/services/dental_implant.png",
                 title: "Dental Implants",
-                description: "Permanent tooth replacements that look, feel and function like natural teeth for a complete smile."
+                description: "Permanent tooth replacements that look, feel and function like natural teeth for a complete smile.",
+                details: {
+                  overview: "Dental implants are titanium posts surgically placed in your jawbone, providing a permanent foundation for replacement teeth.",
+                  benefits: [
+                    "Permanent solution for missing teeth",
+                    "Natural look and feel",
+                    "Preserves jawbone structure",
+                    "No impact on adjacent teeth",
+                    "Long-lasting with proper care"
+                  ],
+                  process: "The implant is placed surgically, allowed to integrate with the bone, then topped with a custom crown.",
+                  duration: "3-6 months total process",
+                  frequency: "One-time procedure with follow-ups"
+                }
               },
               {
-                icon: "/images/img_dentist.svg",
-                title: "Cosmetic Dentistry",
-                description: "Procedures to improve the appearance of your smile, including veneers, bonding, and smile makeovers."
+                image: "/services/sleep.png",
+                title: "Sleep Apnea Treatment",
+                description: "Custom oral appliances and solutions to help treat sleep apnea and improve your quality of sleep.",
+                details: {
+                  overview: "We provide custom-fitted oral appliances that help keep your airway open during sleep, reducing sleep apnea symptoms.",
+                  benefits: [
+                    "Improved sleep quality",
+                    "Reduced snoring",
+                    "Increased daytime energy",
+                    "Lower health risks",
+                    "Non-invasive alternative to CPAP"
+                  ],
+                  process: "We take impressions, create a custom appliance, and adjust it for optimal comfort and effectiveness.",
+                  duration: "2-3 appointments",
+                  frequency: "Annual check-ups recommended"
+                }
               },
               {
-                icon: "/images/img_icon.svg",
-                title: "Orthodontics",
-                description: "Traditional braces and clear aligners to straighten teeth and correct bite issues for all ages."
+                image: "/services/crown.png",
+                title: "Crown, Bridge, Veneers",
+                description: "Restorative and cosmetic solutions to repair, replace, or enhance your teeth for a beautiful smile.",
+                details: {
+                  overview: "We offer high-quality crowns, bridges, and veneers to restore damaged teeth or enhance your smile's appearance.",
+                  benefits: [
+                    "Restores tooth function",
+                    "Natural-looking results",
+                    "Long-lasting solutions",
+                    "Protects damaged teeth",
+                    "Improves smile aesthetics"
+                  ],
+                  process: "Teeth are prepared, impressions taken, temporary restorations placed, then custom permanent restorations fitted.",
+                  duration: "2-3 visits",
+                  frequency: "Lasts 10-15 years with care"
+                }
               },
               {
-                icon: "/images/img_users.svg",
-                title: "Family Dentistry",
-                description: "Comprehensive care for the whole family, from children's first visit to senior dental health needs."
+                image: "/services/petridontal.png",
+                title: "Periodontal Treatment",
+                description: "Specialized care for gum disease and supporting structures to maintain healthy gums and teeth.",
+                details: {
+                  overview: "Comprehensive treatment for gum disease ranging from deep cleaning to advanced surgical procedures.",
+                  benefits: [
+                    "Stops gum disease progression",
+                    "Reduces inflammation",
+                    "Prevents tooth loss",
+                    "Improves overall health",
+                    "Eliminates bad breath"
+                  ],
+                  process: "Treatment may include scaling and root planing, medication, or surgery depending on severity.",
+                  duration: "Varies by treatment",
+                  frequency: "Ongoing maintenance required"
+                }
+              },
+              {
+                image: "/services/laser.png",
+                title: "Laser Dental Procedures",
+                description: "Advanced laser technology for precise, minimally invasive treatments with faster healing times.",
+                details: {
+                  overview: "We use state-of-the-art laser technology for various dental procedures, offering precision and comfort.",
+                  benefits: [
+                    "Minimally invasive",
+                    "Faster healing time",
+                    "Less discomfort",
+                    "Reduced bleeding",
+                    "High precision"
+                  ],
+                  process: "Laser is used for soft tissue procedures, cavity preparation, and teeth whitening with precision.",
+                  duration: "Varies by procedure",
+                  frequency: "As needed"
+                }
+              },
+              {
+                image: "/services/scaling.png",
+                title: "Teeth Scaling and Polishing",
+                description: "Professional cleaning to remove plaque, tartar, and stains for a healthier, brighter smile.",
+                details: {
+                  overview: "Deep cleaning procedure that removes plaque and tartar buildup from above and below the gum line.",
+                  benefits: [
+                    "Removes stubborn plaque and tartar",
+                    "Prevents gum disease",
+                    "Freshens breath",
+                    "Brightens teeth",
+                    "Promotes oral health"
+                  ],
+                  process: "Ultrasonic and manual tools remove buildup, followed by polishing for smooth, clean teeth.",
+                  duration: "45-60 minutes",
+                  frequency: "Every 6 months"
+                }
+              },
+              {
+                image: "/services/root.png",
+                title: "Root Canal & Oral Surgery",
+                description: "Expert endodontic treatments and surgical procedures to save teeth and address complex dental issues.",
+                details: {
+                  overview: "Advanced treatments to save infected teeth and perform necessary oral surgeries with precision and care.",
+                  benefits: [
+                    "Saves natural teeth",
+                    "Eliminates pain and infection",
+                    "Prevents spreading of infection",
+                    "Modern pain-free techniques",
+                    "High success rate"
+                  ],
+                  process: "Infected pulp is removed, canal cleaned and sealed, often followed by a crown restoration.",
+                  duration: "1-2 hours per tooth",
+                  frequency: "As needed"
+                }
+              },
+              {
+                image: "/services/facial_skin.png",
+                title: "Facial Skin Rejuvenation, Tightening, Wrinkle Removal and Anti Ageing",
+                description: "Advanced aesthetic treatments to restore youthful appearance and improve skin texture and firmness.",
+                details: {
+                  overview: "Comprehensive anti-aging treatments combining latest technologies for skin rejuvenation and facial enhancement.",
+                  benefits: [
+                    "Reduced fine lines and wrinkles",
+                    "Improved skin texture",
+                    "Enhanced skin firmness",
+                    "Youthful appearance",
+                    "Non-surgical options"
+                  ],
+                  process: "Customized treatment plans using advanced techniques tailored to your skin type and concerns.",
+                  duration: "30-90 minutes per session",
+                  frequency: "Series of treatments recommended"
+                }
+              },
+              {
+                image: "/services/chemical_peel.png",
+                title: "Chemical Peels and Facials",
+                description: "Professional skin treatments to exfoliate, refresh, and revitalize your complexion.",
+                details: {
+                  overview: "Medical-grade chemical peels and professional facials to improve skin tone, texture, and overall appearance.",
+                  benefits: [
+                    "Exfoliates dead skin cells",
+                    "Reduces hyperpigmentation",
+                    "Minimizes pores",
+                    "Improves skin tone",
+                    "Refreshed complexion"
+                  ],
+                  process: "Professional application of chemical solutions or facial treatments customized to your skin needs.",
+                  duration: "45-90 minutes",
+                  frequency: "Monthly treatments recommended"
+                }
+              },
+              {
+                image: "/services/PRP.png",
+                title: "PRP and Laser Facial Treatments",
+                description: "Cutting-edge platelet-rich plasma and laser therapies for natural skin rejuvenation and enhancement.",
+                details: {
+                  overview: "Advanced treatments using your body's own healing factors and precise laser technology for natural rejuvenation.",
+                  benefits: [
+                    "Natural collagen production",
+                    "Improved skin quality",
+                    "Reduced scarring",
+                    "Enhanced skin tone",
+                    "Long-lasting results"
+                  ],
+                  process: "PRP is extracted from your blood and applied with microneedling, or laser is used for precise treatment.",
+                  duration: "60-90 minutes",
+                  frequency: "3-4 sessions recommended"
+                }
+              },
+              {
+                image: "/services/hair.png",
+                title: "Permanent Hair Removal and Shaping",
+                description: "Safe and effective laser hair removal solutions for smooth, hair-free skin with long-lasting results.",
+                details: {
+                  overview: "Advanced laser technology for permanent hair reduction on various body areas with minimal discomfort.",
+                  benefits: [
+                    "Long-lasting hair reduction",
+                    "Smooth skin",
+                    "No more shaving or waxing",
+                    "Safe for most skin types",
+                    "Precise targeting"
+                  ],
+                  process: "Laser targets hair follicles, preventing regrowth while protecting surrounding skin.",
+                  duration: "15-60 minutes per area",
+                  frequency: "6-8 sessions for optimal results"
+                }
+              },
+              {
+                image: "/services/tattoo.png",
+                title: "Body Sculpting and Tattoo Removal",
+                description: "Advanced body contouring and laser tattoo removal services to help you achieve your aesthetic goals.",
+                details: {
+                  overview: "State-of-the-art treatments for body contouring and safe, effective tattoo removal using advanced laser technology.",
+                  benefits: [
+                    "Non-surgical body contouring",
+                    "Safe tattoo fading/removal",
+                    "Minimal downtime",
+                    "Effective results",
+                    "Customized treatment plans"
+                  ],
+                  process: "Laser technology targets specific areas for sculpting or breaks down tattoo ink for natural elimination.",
+                  duration: "30-90 minutes per session",
+                  frequency: "Multiple sessions required"
+                }
               }
             ].map((service, index) => (
-              <Card key={index} className="p-8 hover:shadow-xl transition-shadow duration-300">
-                <div className="bg-[#1E63D5] p-6 rounded-lg w-16 h-16 mb-6 flex items-center justify-center">
-                  <Image src={service.icon} alt={service.title} width={32} height={32} />
+              <Card 
+                key={index} 
+                className={`p-8 hover:shadow-xl transition-all duration-500 ${
+                  expandedCard === index ? 'md:col-span-3' : 'md:col-span-1'
+                }`}
+              >
+                <div className={`${expandedCard === index ? 'grid md:grid-cols-2 gap-8 items-start' : ''}`}>
+                  {/* Image and Basic Info */}
+                  <div className={expandedCard === index ? 'md:sticky md:top-4' : ''}>
+                    <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
+                      <Image 
+                        src={service.image} 
+                        alt={service.title} 
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-4">{service.title}</h3>
+                    <p className="text-gray-500 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    
+                    <button 
+                      onClick={() => toggleCard(index)}
+                      className="text-[#1E63D5] font-medium flex items-center hover:text-[#25D9FF] transition-colors"
+                    >
+                      {expandedCard === index ? 'Show Less' : 'Learn More'}
+                      <Image 
+                        src="/images/img_arrowright.svg" 
+                        alt="Arrow" 
+                        width={16} 
+                        height={16} 
+                        className={`ml-2 transition-transform duration-500 ${expandedCard === index ? 'rotate-90' : ''}`}
+                      />
+                    </button>
+                  </div>
+                
+                  {/* Expanded Details */}
+                  <div 
+                    className="grid transition-all duration-500 ease-in-out"
+                    style={{
+                      gridTemplateRows: expandedCard === index ? '1fr' : '0fr'
+                    }}
+                  >
+                    <div className="overflow-hidden">
+                      {service.details && (
+                        <div className="pt-6 space-y-6">
+                          <div className="bg-gray-50 p-6 rounded-lg">
+                            <h4 className="font-semibold text-gray-900 mb-3 text-lg">Overview</h4>
+                            <p className="text-gray-600 leading-relaxed">{service.details.overview}</p>
+                          </div>
+                          
+                          <div className="bg-gray-50 p-6 rounded-lg">
+                            <h4 className="font-semibold text-gray-900 mb-3 text-lg flex items-center">
+                              <svg className="w-5 h-5 text-[#1E63D5] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                              </svg>
+                              Key Features
+                            </h4>
+                            <ul className="space-y-3 mt-4">
+                              {service.details.benefits.slice(0, 4).map((benefit, idx) => (
+                                <li key={idx} className="flex items-start">
+                                  <svg className="w-5 h-5 text-[#1E63D5] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
+                                  </svg>
+                                  <span className="text-gray-700">{benefit}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div className="bg-gray-50 p-6 rounded-lg">
+                            <h4 className="font-semibold text-gray-900 mb-3 text-lg">Benefits</h4>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                              {service.details.benefits.map((benefit, idx) => (
+                                <div key={idx} className="flex items-start">
+                                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[#1E63D5] text-white text-xs mr-2 flex-shrink-0 mt-0.5">
+                                    ✓
+                                  </span>
+                                  <span className="text-gray-700 text-sm">{benefit}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div className="bg-[#1E63D5] bg-opacity-10 p-5 rounded-lg border-l-4 border-[#1E63D5]">
+                              <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
+                                <svg className="w-5 h-5 text-[#1E63D5] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+                                </svg>
+                                Duration
+                              </h4>
+                              <p className="text-gray-700 font-medium">{service.details.duration}</p>
+                            </div>
+                            <div className="bg-[#25D9FF] bg-opacity-10 p-5 rounded-lg border-l-4 border-[#25D9FF]">
+                              <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
+                                <svg className="w-5 h-5 text-[#25D9FF] mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"/>
+                                </svg>
+                                Frequency
+                              </h4>
+                              <p className="text-gray-700 font-medium">{service.details.frequency}</p>
+                            </div>
+                          </div>
+
+                          <div className="bg-gradient-to-r from-[#1E63D5] to-[#25D9FF] p-6 rounded-lg text-white">
+                            <h4 className="font-semibold mb-2 text-lg">Treatment Process</h4>
+                            <p className="text-white text-opacity-90 leading-relaxed">{service.details.process}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-500 leading-relaxed mb-6">
-                  {service.description}
-                </p>
-                <a href="#" className="text-[#1E63D5] font-medium flex items-center">
-                  Learn More
-                  <Image src="/images/img_arrowright.svg" alt="Arrow" width={16} height={16} className="ml-2" />
-                </a>
               </Card>
             ))}
           </div>

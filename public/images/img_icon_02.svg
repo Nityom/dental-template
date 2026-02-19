@@ -1,13 +1,1 @@
-<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="44" height="44" fill="#053B3F"/>
-<g clip-path="url(#clip0_0_73)">
-<path d="M25.75 14.5H18.25C16.1789 14.5 14.5 16.1789 14.5 18.25V25.75C14.5 27.8211 16.1789 29.5 18.25 29.5H25.75C27.8211 29.5 29.5 27.8211 29.5 25.75V18.25C29.5 16.1789 27.8211 14.5 25.75 14.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M25 21.5277C25.0926 22.1519 24.986 22.7894 24.6953 23.3495C24.4047 23.9096 23.9449 24.3638 23.3812 24.6475C22.8176 24.9312 22.1789 25.0299 21.5559 24.9297C20.9329 24.8294 20.3573 24.5353 19.9112 24.0891C19.465 23.6429 19.1708 23.0674 19.0706 22.4444C18.9703 21.8214 19.0691 21.1826 19.3528 20.619C19.6365 20.0554 20.0907 19.5955 20.6508 19.3049C21.2109 19.0143 21.8483 18.9077 22.4725 19.0002C23.1092 19.0946 23.6987 19.3913 24.1538 19.8465C24.6089 20.3016 24.9056 20.891 25 21.5277Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M26.125 17.875H26.135" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</g>
-<defs>
-<clipPath id="clip0_0_73">
-<rect width="18" height="18" fill="white" transform="translate(13 13)"/>
-</clipPath>
-</defs>
-</svg>
+<svg id="SvgjsSvg1014" width="288" height="288" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"><defs id="SvgjsDefs1015"></defs><g id="SvgjsG1016"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="288" height="288"><path d="M11 0H5a5 5 0 0 0-5 5v6a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zm3.5 11c0 1.93-1.57 3.5-3.5 3.5H5c-1.93 0-3.5-1.57-3.5-3.5V5c0-1.93 1.57-3.5 3.5-3.5h6c1.93 0 3.5 1.57 3.5 3.5v6z" fill="#ffffff" class="svgShape color000000-0 selectable"></path><path d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8zm0 6.5A2.503 2.503 0 0 1 5.5 8c0-1.379 1.122-2.5 2.5-2.5s2.5 1.121 2.5 2.5c0 1.378-1.122 2.5-2.5 2.5z" fill="#ffffff" class="svgShape color000000-1 selectable"></path><circle cx="12.3" cy="3.7" r=".533" fill="#ffffff" class="svgShape color000000-2 selectable"></circle></svg></g></svg>
