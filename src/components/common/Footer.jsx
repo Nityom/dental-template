@@ -19,41 +19,50 @@ const Footer = () => {
   };
 
   return (
-    <motion.footer 
+    <motion.footer
       className="bg-[#081A3A] text-white py-10 md:py-16"
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
       variants={footerAnimation}
     >
-      <motion.div 
+      <motion.div
         className="max-w-7xl mx-auto px-4"
         variants={staggerContainer(0.1, 0.2)}
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {/* Company Info */}
-          <motion.div 
+          <motion.div
             className="mb-8 md:mb-0"
             variants={navItemAnimation}
           >
-            <Link href="/" className="text-xl md:text-2xl font-bold mb-4 md:mb-6 block">
-              <span className="font-extrabold">
-                <span className="text-gray-400">KS</span>
-                <span className="text-white"> DENTAL</span>
-              </span>
-              <span className="text-[#25D9FF] font-light"> & AESTHETIC</span>
+            <Link href="/" className="flex items-center gap-3 mb-4 md:mb-6">
+              <Image
+                src="/dental_logo.svg"
+                alt="KS Dental & Aesthetic Clinic"
+                width={60}
+                height={60}
+                className="h-12 md:h-14 w-auto"
+              />
+              <div className="flex flex-col">
+                <span className="text-xl md:text-2xl font-extrabold">
+                  <span className="text-gray-400">KS</span>
+                  <span className="text-[#1E63D5]"> DENTAL</span>
+                </span>
+                <span className="text-[#1E63D5] font-light"> & AESTHETIC</span>
+              </div>
             </Link>
-            <motion.p 
+            <motion.p
               className="text-gray-300 mb-6 leading-relaxed text-sm md:text-base"
               variants={navItemAnimation}
             >
               Your trusted partner for comprehensive dental and aesthetic care. We're dedicated to creating beautiful, healthy smiles using advanced technology and personalized treatment.
             </motion.p>
-            <motion.div 
+            <motion.div
               className="flex gap-3"
               variants={staggerContainer(0.1, 0)}
             >
-              <motion.div 
+              <motion.div
                 className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -61,7 +70,7 @@ const Footer = () => {
                 <Image src="/images/img_twitter.svg" alt="Twitter" width={16} height={16} />
               </motion.div>
               <Link href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer">
-                <motion.div 
+                <motion.div
                   className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -69,7 +78,7 @@ const Footer = () => {
                   <Image src="/images/img_icon_02.svg" alt="Instagram" width={16} height={16} />
                 </motion.div>
               </Link>
-              <motion.div 
+              <motion.div
                 className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -80,17 +89,17 @@ const Footer = () => {
           </motion.div>
 
           {/* Navigation Section */}
-          <motion.div 
+          <motion.div
             className="border-b border-[#1E63D5] md:border-0 pb-4 md:pb-0"
             variants={navItemAnimation}
           >
-            <div 
+            <div
               className="flex justify-between items-center mb-4 md:mb-6 cursor-pointer md:cursor-default"
               onClick={() => toggleSection('navigation')}
             >
               <h3 className="text-lg md:text-xl font-semibold">Navigation</h3>
               <AnimatePresence>
-                <motion.div 
+                <motion.div
                   className="md:hidden"
                   initial={false}
                   animate={{ rotate: openSection === 'navigation' ? 180 : 0 }}
@@ -103,7 +112,7 @@ const Footer = () => {
             </div>
             <AnimatePresence>
               {(openSection === 'navigation' || !openSection) && (
-                <motion.ul 
+                <motion.ul
                   className="space-y-3 md:space-y-4"
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: 'auto', opacity: 1 }}
@@ -129,7 +138,7 @@ const Footer = () => {
 
           {/* Services - Mobile Accordion, Desktop Regular */}
           <div className="border-b border-[#1E63D5] md:border-0 pb-4 md:pb-0">
-            <div 
+            <div
               className="flex justify-between items-center mb-4 md:mb-6 cursor-pointer md:cursor-default"
               onClick={() => toggleSection('services')}
             >
@@ -183,7 +192,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           className="bg-[#25D9FF] py-4 -mx-4 px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
