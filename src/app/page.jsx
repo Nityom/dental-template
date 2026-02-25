@@ -13,7 +13,7 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <ScrollToTop />
-               {/* About Section */}
+      {/* About Section */}
       <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-12">
@@ -48,25 +48,24 @@ export default function HomePage() {
             </div>
             <div className="hidden lg:block w-full lg:w-1/2 order-2 lg:order-1">
               <div className="bg-gray-900 rounded-lg h-40 sm:h-56 lg:h-80 relative overflow-hidden">
-                <Image 
-                  src="/images/img_shape.svg" 
-                  alt="Dental clinic interior" 
-                  width={456}
-                  height={552}
-                  className="absolute bottom-0 left-0 w-full h-full object-cover"
+                <Image
+                  src="/clinic/opd.png"
+                  alt="Dental clinic interior"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* Video Section */}
+      {/* Video Section  
       <section className="py-12 sm:py-16 lg:py-20 bg-[#081A3A] relative">
         <div className="max-w-7xl mx-auto px-4">
           <div className="relative">
-            <Image 
-              src="/images/img_video_box.svg" 
-              alt="Video background" 
+            <Image
+              src="/images/img_video_box.svg"
+              alt="Video background"
               width={1140}
               height={600}
               className="w-full rounded-lg"
@@ -78,32 +77,33 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        {/* Statistics */}
-        <div className=" bg-[#081A3A] py-16 mt-16">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-5xl font-semibold text-white mb-6">KS Dental & Aesthetic Clinic Statistics</h2>
-              <p className="text-gray-200 text-lg max-w-3xl mx-auto">
-                Our commitment to excellence is reflected in the thousands of satisfied patients, successful treatments, and recognition we've received. These numbers represent real people whose lives we've positively impacted through quality dental care.
-              </p>
+      </section>
+      */}
+      {/* Statistics */}
+      <div className=" bg-[#081A3A] py-16 mt-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-semibold text-white mb-6">KS Dental & Aesthetic Clinic Statistics</h2>
+            <p className="text-gray-200 text-lg max-w-3xl mx-auto">
+              Our commitment to excellence is reflected in the thousands of satisfied patients, successful treatments, and recognition we've received. These numbers represent real people whose lives we've positively impacted through quality dental care.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div>
+              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">780+</h3>
+              <p className="text-gray-200 text-lg">Happy Patient</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div>
-                <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">780+</h3>
-                <p className="text-gray-200 text-lg">Happy Patient</p>
-              </div>
-              <div>
-                <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">560+</h3>
-                <p className="text-gray-200 text-lg">Online Appointment</p>
-              </div>
-              <div>
-                <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">340+</h3>
-                <p className="text-gray-200 text-lg">Winning Award</p>
-              </div>
+            <div>
+              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">560+</h3>
+              <p className="text-gray-200 text-lg">Online Appointment</p>
+            </div>
+            <div>
+              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">340+</h3>
+              <p className="text-gray-200 text-lg">Winning Award</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
       {/* Services Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -116,13 +116,12 @@ export default function HomePage() {
               <p className="text-gray-500 text-lg mb-8 leading-relaxed">
                 From routine checkups to advanced cosmetic procedures, our comprehensive range of dental and aesthetic services ensures that all your oral health and beauty needs are met under one roof. We use the latest technology to provide safe, effective, and comfortable treatments.
               </p>
-              <div className="bg-gray-900 rounded-lg h-80 relative">
-                <Image 
-                  src="/images/img_shape_cyan_500.svg" 
-                  alt="Dental services" 
-                  width={200}
-                  height={100}
-                  className="absolute bottom-0 left-0"
+              <div className="bg-gray-900 rounded-lg h-80 relative overflow-hidden">
+                <Image
+                  src="/clinic/opd-2.png"
+                  alt="Dental services"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
@@ -183,30 +182,32 @@ export default function HomePage() {
               Our experienced dental professionals are dedicated to providing personalized care using the latest techniques and technology. Each member of our team is committed to making your dental experience comfortable and ensuring the best possible outcomes.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {[
-              { name: "Dr. Carolyn", specialty: "Dental Specialist" },
-              { name: "Dr. Culpepper", specialty: "Dental Specialist" },
-              { name: "Dr. Alanna", specialty: "Dental Specialist" }
+              {
+                name: "Dr. Kautilya Swaroop",
+                specialty: "MDS - Orthodontics & Dentofacial Orthopaedics",
+                image: "/doctor/kautilya.png"
+              },
+              {
+                name: "Dr. Anjali Swaroop",
+                specialty: "BDS, PGDFC, Cosmetic Dental Surgeon & Advanced Facial Aesthetics Clinician",
+                image: "/doctor/anjali.png"
+              }
             ].map((doctor, index) => (
               <Card key={index} className="bg-white rounded-lg overflow-hidden">
-                <div className="bg-gray-900 h-80 relative">
-                  {/* Doctor image placeholder */}
+                <div className="bg-gray-900 h-80 relative overflow-hidden">
+                  <Image
+                    src={doctor.image}
+                    alt={doctor.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div className="p-6">
+                <div className="p-6 text-center">
                   <h3 className="text-2xl font-semibold text-gray-900 mb-2">{doctor.name}</h3>
-                  <p className="text-[#1E63D5] mb-4">{doctor.specialty}</p>
-                  <div className="flex gap-2">
-                    <div className="bg-[#1E63D5] p-3 rounded-lg">
-                      <Image src="/images/img_facebook.svg" alt="Facebook" width={24} height={24} />
-                    </div>
-                    <a href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer" className="bg-[#1E63D5] p-3 rounded-lg border border-[#25D9FF]">
-                      <Image src="/images/img_icon_02.svg" alt="Instagram" width={24} height={24} />
-                    </a>
-                    {/* <div className="bg-[#1E63D5] p-3 rounded-lg border border-[#25D9FF]">
-                      <Image src="/images/img_linkedin.svg" alt="LinkedIn" width={24} height={24} />
-                    </div> */}
-                  </div>
+                  <p className="text-[#1E63D5] font-medium mb-4 min-h-[48px]">{doctor.specialty}</p>
+                  {/* Removing social media icons as requested */}
                 </div>
               </Card>
             ))}
@@ -229,21 +230,24 @@ export default function HomePage() {
                 The team at KS Dental & Aesthetic Clinic transformed my smile completely! I was nervous about getting dental implants, but the staff made me feel comfortable throughout the entire process. The results exceeded my expectations, and I couldn't be happier with my new confident smile.
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-20 h-20 bg-gray-900 rounded-full"></div>
+                <div className="w-20 h-20 bg-gray-300 rounded-full relative overflow-hidden flex-shrink-0">
+                  <Image src="https://avatars.githubusercontent.com/u/112824495?v=4" alt="Nityom  Tikhe" fill className="object-cover" />
+                </div>
                 <div>
-                  <h4 className="text-2xl font-semibold text-gray-900">Jose Turner</h4>
+                  <h4 className="text-2xl font-semibold text-gray-900">Nityom Tikhe</h4>
                   <p className="text-gray-500">Satisfied Patient</p>
                 </div>
               </div>
             </div>
             <div>
-              <Image 
-                src="/images/img_image.svg" 
-                alt="Patient testimonial" 
-                width={552}
-                height={456}
-                className="w-full rounded-lg"
-              />
+              <div className="w-full h-[400px] md:h-[456px] relative overflow-hidden rounded-lg">
+                <Image
+                  src="/clinic/patient.png"
+                  alt="Patient testimonial"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -294,6 +298,6 @@ export default function HomePage() {
         </div>
       </section>
       <Footer />
-    </div>
+    </div >
   );
 }

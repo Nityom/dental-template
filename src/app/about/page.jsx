@@ -12,7 +12,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       <Header />
       <ScrollToTop />
-        {/* Hero Section */}
+      {/* Hero Section */}
       <section className="bg-gray-900 text-white py-12 md:py-16 lg:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="max-w-2xl">
@@ -25,7 +25,7 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        
+
         {/* Decorative Elements */}
         <div className="hidden md:block absolute top-0 right-0 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-white opacity-10"></div>
         <div className="hidden md:block absolute top-16 md:top-24 lg:top-32 right-16 md:right-24 lg:right-32 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-white opacity-5"></div>
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="absolute bottom-0 right-16 md:right-24 lg:right-32 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-[#25D9FF]"></div>
         <div className="absolute bottom-16 md:bottom-24 lg:bottom-32 right-0 w-16 md:w-24 lg:w-32 h-16 md:h-24 lg:h-32 bg-[#4FAEFF]"></div>
       </section>
-      
+
       {/* Our Story Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -56,16 +56,18 @@ export default function AboutPage() {
             </div>
             <div className="relative order-1 lg:order-2 mb-8 lg:mb-0">
               <div className="bg-gray-900 rounded-lg h-64 sm:h-80 lg:h-96 relative overflow-hidden">
-                {/* Image placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                  [Clinic Story Image]
-                </div>
+                <Image
+                  src="/clinic/interior.png"
+                  alt="About"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       {/* Our Values Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
@@ -78,7 +80,7 @@ export default function AboutPage() {
               At KS Dental & Aesthetic Clinic, our values guide everything we do. They're the foundation of our approach to patient care and how we operate as a team.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <Card className="text-center p-6 md:p-8">
               <div className="bg-[#1E63D5] p-4 md:p-6 rounded-lg w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 flex items-center justify-center">
@@ -89,7 +91,7 @@ export default function AboutPage() {
                 We strive for excellence in every aspect of our practice, from the latest dental technologies to ongoing professional development.
               </p>
             </Card>
-              <Card className="text-center p-6 md:p-8">
+            <Card className="text-center p-6 md:p-8">
               <div className="bg-[#1E63D5] p-4 md:p-6 rounded-lg w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 flex items-center justify-center">
                 <Image src="/images/img_users.svg" alt="Patient-centered care" width={30} height={30} />
               </div>
@@ -98,7 +100,7 @@ export default function AboutPage() {
                 We put patients first, taking the time to listen to concerns, explain procedures, and create personalized treatment plans.
               </p>
             </Card>
-            
+
             <Card className="text-center p-6 md:p-8">
               <div className="bg-[#1E63D5] p-4 md:p-6 rounded-lg w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 md:mb-6 flex items-center justify-center">
                 <Image src="/images/img_icon.svg" alt="Integrity" width={30} height={30} />
@@ -111,7 +113,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-        {/* Our Team Section */}
+      {/* Our Team Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-[#081A3A]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
@@ -123,42 +125,40 @@ export default function AboutPage() {
               Our team consists of experienced professionals who are passionate about dental health and committed to providing the best care for our patients.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
             {[
-              { name: "Dr. Sarah Mitchell", specialty: "Founder & Orthodontist" },
-              { name: "Dr. Michael Chen", specialty: "Periodontist" },
-              { name: "Dr. Olivia Carter", specialty: "Dental Surgeon" },
-              { name: "Dr. James Wilson", specialty: "Cosmetic Dentist" }
+              {
+                name: "Dr. Kautilya Swaroop",
+                specialty: "MDS - Orthodontics & Dentofacial Orthopaedics",
+                image: "/doctor/kautilya.png"
+              },
+              {
+                name: "Dr. Anjali Swaroop",
+                specialty: "BDS, PGDFC, Cosmetic Dental Surgeon & Advanced Facial Aesthetics Clinician",
+                image: "/doctor/anjali.png"
+              }
             ].map((doctor, index) => (
               <Card key={index} className="bg-white rounded-lg overflow-hidden">
-                <div className="bg-gray-900 h-48 sm:h-56 md:h-64 relative">
-                  {/* Doctor image placeholder */}
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                    [Doctor Photo]
-                  </div>
+                <div className="bg-gray-900 h-64 sm:h-72 md:h-80 relative overflow-hidden">
+                  <Image
+                    src={doctor.image}
+                    alt={doctor.name}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
-                <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">{doctor.name}</h3>
-                  <p className="text-[#1E63D5] text-sm sm:text-base mb-3 sm:mb-4">{doctor.specialty}</p>
-                  <div className="flex gap-2">
-                    <div className="bg-[#1E63D5] p-1.5 sm:p-2 rounded-lg">
-                      <Image src="/images/img_facebook.svg" alt="Facebook" width={18} height={18} />
-                    </div>
-                    <a href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer" className="bg-[#1E63D5] p-1.5 sm:p-2 rounded-lg">
-                      <Image src="/images/img_icon_02.svg" alt="Instagram" width={18} height={18} />
-                    </a>
-                    {/* <div className="bg-[#1E63D5] p-1.5 sm:p-2 rounded-lg">
-                      <Image src="/images/img_linkedin.svg" alt="LinkedIn" width={18} height={18} />
-                    </div> */}
-                  </div>
+                <div className="p-4 sm:p-6 text-center">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">{doctor.name}</h3>
+                  <p className="text-[#1E63D5] text-sm sm:text-base font-medium mb-4 min-h-[48px]">{doctor.specialty}</p>
+                  {/* Removing social media icons as requested */}
                 </div>
               </Card>
             ))}
           </div>
         </div>
       </section>
-        {/* Facility Section */}
+      {/* Facility Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
@@ -170,28 +170,34 @@ export default function AboutPage() {
               We've created a modern, comfortable environment equipped with the latest dental technology to ensure effective treatment and patient comfort.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative">
-              {/* Facility image placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                [Reception Area]
-              </div>
+            <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative overflow-hidden">
+              <Image
+                src="/clinic/opd.png"
+                alt="Reception Area"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative">
-              {/* Facility image placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                [Treatment Room]
-              </div>
+            <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative overflow-hidden">
+              <Image
+                src="/clinic/op.png"
+                alt="Treatment Room"
+                fill
+                className="object-cover"
+              />
             </div>
-            <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative sm:col-span-2 lg:col-span-1">
-              {/* Facility image placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                [Equipment]
-              </div>
+            <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative sm:col-span-2 lg:col-span-1 overflow-hidden">
+              <Image
+                src="/clinic/interior.png"
+                alt="Clinic Interior"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
-          
+
           <div className="text-center mt-8 md:mt-12">
             <Button variant="primary" size="large" className="w-full sm:w-auto">
               Contact Us
@@ -199,7 +205,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-        {/* Testimonials Section */}
+      {/* Testimonials Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-8 md:mb-12 lg:mb-16">
@@ -208,23 +214,45 @@ export default function AboutPage() {
               What Our Patients Say
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[1, 2, 3].map((item) => (
-              <Card key={item} className="p-6 md:p-8">
+            {[
+              {
+                id: 1,
+                name: "Nityom Tikhe",
+                type: "Regular Patient",
+                image: "https://avatars.githubusercontent.com/u/112824495?v=4",
+                review: "I've always been anxious about dental visits, but the team at KS Dental & Aesthetic Clinic made me feel completely at ease. The care I received was exceptional and painless. I actually look forward to my appointments now!"
+              },
+              {
+                id: 2,
+                name: "Ajay Sharma",
+                type: "Cosmetic Patient",
+                image: "https://avatars.githubusercontent.com/u/112553668?v=4",
+                review: "The cosmetic work I had done here completely transformed my smile. The doctors were meticulous and the results are truly life-changing. I can't stop smiling!"
+              },
+              {
+                id: 3,
+                name: "Nimish Mittal",
+                type: "New Patient",
+                image: "https://avatars.githubusercontent.com/u/69715712?v=4",
+                review: "From the moment I walked in, I knew I was in good hands. The state-of-the-art facility is impressive, but it's the warm, professional staff that really makes the difference."
+              }
+            ].map((item) => (
+              <Card key={item.id} className="p-6 md:p-8">
                 <div className="mb-4 md:mb-6">
                   <Image src="/images/img_icon.svg" alt="Quote" width={30} height={30} />
                 </div>
                 <p className="text-gray-500 text-sm md:text-base mb-6 md:mb-8 leading-relaxed">
-                  "I've always been anxious about dental visits, but the team at KS Dental & Aesthetic Clinic made me feel completely at ease. The care I received was exceptional and painless. I actually look forward to my appointments now!"
+                  "{item.review}"
                 </p>
                 <div className="flex items-center gap-3 md:gap-4">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full">
-                    {/* Patient photo placeholder */}
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-300 rounded-full relative overflow-hidden flex-shrink-0">
+                    <Image src={item.image} alt={item.name} fill className="object-cover" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 text-sm md:text-base">Patient Name</h4>
-                    <p className="text-gray-500 text-xs md:text-sm">Regular Patient</p>
+                    <h4 className="font-semibold text-gray-900 text-sm md:text-base">{item.name}</h4>
+                    <p className="text-gray-500 text-xs md:text-sm">{item.type}</p>
                   </div>
                 </div>
               </Card>
@@ -232,7 +260,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );

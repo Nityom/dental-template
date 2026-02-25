@@ -18,7 +18,7 @@ export default function ServicesPage() {
     <div className="min-h-screen bg-white">
       <Header />
       <ScrollToTop />
-      
+
       {/* Hero Section */}
       <section className="bg-gray-900 text-white py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
@@ -36,7 +36,7 @@ export default function ServicesPage() {
             </Button>
           </div>
         </div>
-        
+
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10"></div>
         <div className="absolute top-32 right-32 w-32 h-32 bg-white opacity-5"></div>
@@ -58,7 +58,7 @@ export default function ServicesPage() {
               At KS Dental & Aesthetic Clinic, we provide comprehensive dental services using the latest technology and techniques to ensure the best outcomes for our patients.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
@@ -332,19 +332,18 @@ export default function ServicesPage() {
                 }
               }
             ].map((service, index) => (
-              <Card 
-                key={index} 
-                className={`p-8 hover:shadow-xl transition-all duration-500 ${
-                  expandedCard === index ? 'md:col-span-3' : 'md:col-span-1'
-                }`}
+              <Card
+                key={index}
+                className={`p-8 hover:shadow-xl transition-all duration-500 ${expandedCard === index ? 'md:col-span-3' : 'md:col-span-1'
+                  }`}
               >
                 <div className={`${expandedCard === index ? 'grid md:grid-cols-2 gap-8 items-start' : ''}`}>
                   {/* Image and Basic Info */}
                   <div className={expandedCard === index ? 'md:sticky md:top-4' : ''}>
                     <div className="relative w-full h-48 mb-6 rounded-lg overflow-hidden">
-                      <Image 
-                        src={service.image} 
-                        alt={service.title} 
+                      <Image
+                        src={service.image}
+                        alt={service.title}
                         fill
                         className="object-cover"
                       />
@@ -353,24 +352,24 @@ export default function ServicesPage() {
                     <p className="text-gray-500 leading-relaxed mb-6">
                       {service.description}
                     </p>
-                    
-                    <button 
+
+                    <button
                       onClick={() => toggleCard(index)}
                       className="text-[#1E63D5] font-medium flex items-center hover:text-[#25D9FF] transition-colors"
                     >
                       {expandedCard === index ? 'Show Less' : 'Learn More'}
-                      <Image 
-                        src="/images/img_arrowright.svg" 
-                        alt="Arrow" 
-                        width={16} 
-                        height={16} 
+                      <Image
+                        src="/images/img_arrowright.svg"
+                        alt="Arrow"
+                        width={16}
+                        height={16}
                         className={`ml-2 transition-transform duration-500 ${expandedCard === index ? 'rotate-90' : ''}`}
                       />
                     </button>
                   </div>
-                
+
                   {/* Expanded Details */}
-                  <div 
+                  <div
                     className="grid transition-all duration-500 ease-in-out"
                     style={{
                       gridTemplateRows: expandedCard === index ? '1fr' : '0fr'
@@ -383,12 +382,12 @@ export default function ServicesPage() {
                             <h4 className="font-semibold text-gray-900 mb-3 text-lg">Overview</h4>
                             <p className="text-gray-600 leading-relaxed">{service.details.overview}</p>
                           </div>
-                          
+
                           <div className="bg-gray-50 p-6 rounded-lg">
                             <h4 className="font-semibold text-gray-900 mb-3 text-lg flex items-center">
                               <svg className="w-5 h-5 text-[#1E63D5] mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd"/>
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                <path fillRule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
                               </svg>
                               Key Features
                             </h4>
@@ -403,7 +402,7 @@ export default function ServicesPage() {
                               ))}
                             </ul>
                           </div>
-                          
+
                           <div className="bg-gray-50 p-6 rounded-lg">
                             <h4 className="font-semibold text-gray-900 mb-3 text-lg">Benefits</h4>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -417,12 +416,12 @@ export default function ServicesPage() {
                               ))}
                             </div>
                           </div>
-                          
+
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div className="bg-[#1E63D5] bg-opacity-10 p-5 rounded-lg border-l-4 border-[#1E63D5]">
                               <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
                                 <svg className="w-5 h-5 text-[#1E63D5] mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd"/>
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                                 </svg>
                                 Duration
                               </h4>
@@ -431,7 +430,7 @@ export default function ServicesPage() {
                             <div className="bg-[#25D9FF] bg-opacity-10 p-5 rounded-lg border-l-4 border-[#25D9FF]">
                               <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
                                 <svg className="w-5 h-5 text-[#25D9FF] mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"/>
+                                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
                                 </svg>
                                 Frequency
                               </h4>
@@ -453,7 +452,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      
+
       {/* Featured Service */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
@@ -461,10 +460,10 @@ export default function ServicesPage() {
             <div>
               <p className="text-[#1E63D5] font-medium mb-4">Featured Service</p>
               <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
-                Advanced Teeth Whitening
+                Braces
               </h2>
               <p className="text-gray-500 text-lg mb-6 leading-relaxed">
-                Our professional teeth whitening treatments can brighten your smile by several shades in just one visit. We use advanced technology that is gentle on teeth while providing dramatic results.
+                Our professional teeth alignment treatments can perfect your smile over time. We use advanced orthodontic technology that provides optimal, safe, and effective results.
               </p>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
@@ -506,23 +505,25 @@ export default function ServicesPage() {
             </div>
             <div className="relative">
               <div className="bg-gray-900 rounded-lg h-96 relative overflow-hidden">
-                {/* Image placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                  [Teeth Whitening Treatment Image]
-                </div>
-                <Image 
-                  src="/images/img_shape_cyan_500.svg" 
-                  alt="Decorative shape" 
+                <Image
+                  src="/clinic/braces.png"
+                  alt="Braces Treatment Image"
+                  fill
+                  className="object-cover"
+                />
+                <Image
+                  src="/images/img_shape_cyan_500.svg"
+                  alt="Decorative shape"
                   width={200}
                   height={100}
-                  className="absolute bottom-0 left-0"
+                  className="absolute bottom-0 left-0 z-10"
                 />
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
       {/* Service Process */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
@@ -535,7 +536,7 @@ export default function ServicesPage() {
               We follow a systematic approach to ensure we meet your dental needs effectively and efficiently.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {[
               {
@@ -578,107 +579,62 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      
-      {/* Pricing */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <p className="text-[#1E63D5] font-medium mb-4">Pricing</p>
-            <h2 className="text-5xl font-semibold text-gray-900 mb-6 leading-tight">
-              Transparent Fee Structure
+
+      {/* Billing & Transparency */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <p className="text-[#1E63D5] font-medium mb-3 text-sm tracking-wide">Billing & Transparency</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111827] mb-6">
+              Complete Transparency in Healthcare
             </h2>
-            <p className="text-gray-500 text-lg max-w-3xl mx-auto">
-              We believe in transparency when it comes to our pricing. Here are our starting rates for common treatments.
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">
+              At KS Dental & Aesthetic Clinic, we believe in complete transparency. Every treatment, procedure, and service comes with detailed billing documentation.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">General Dentistry</h3>
-              <ul className="space-y-4 mb-8">
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Regular Checkup</span>
-                  <span className="font-semibold text-gray-900">$75</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Dental Cleaning</span>
-                  <span className="font-semibold text-gray-900">$100</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Filling (per tooth)</span>
-                  <span className="font-semibold text-gray-900">$150</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Root Canal</span>
-                  <span className="font-semibold text-gray-900">$700</span>
-                </li>
-              </ul>
-              <Button variant="outline" size="medium" className="w-full">
-                Book Now
-              </Button>
-            </Card>
-            
-            <Card className="p-8 border-2 border-[#1E63D5] shadow-lg">
-              <div className="absolute top-0 right-0 bg-[#1E63D5] text-white py-1 px-4 text-sm font-medium rounded-bl-lg">
-                Popular
+
+          <div className="bg-[#F0F5FE] border border-blue-100 rounded-2xl p-8 md:p-12 shadow-sm">
+            <div className="flex flex-col items-center">
+              <div className="flex items-center justify-center space-x-3 mb-6">
+                <div className="bg-[#E0EBFF] text-[#1E63D5] p-2 rounded-full">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-[#111827]">Our Commitment to Transparency</h3>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Cosmetic Services</h3>
-              <ul className="space-y-4 mb-8">
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Teeth Whitening</span>
-                  <span className="font-semibold text-gray-900">$350</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Veneers (per tooth)</span>
-                  <span className="font-semibold text-gray-900">$950</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Bonding (per tooth)</span>
-                  <span className="font-semibold text-gray-900">$300</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Smile Makeover</span>
-                  <span className="font-semibold text-gray-900">$2,500+</span>
-                </li>
-              </ul>
-              <Button variant="primary" size="medium" className="w-full">
-                Book Now
-              </Button>
-            </Card>
-            
-            <Card className="p-8">
-              <h3 className="text-xl font-semibold text-gray-900 mb-6">Specialty Treatments</h3>
-              <ul className="space-y-4 mb-8">
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Dental Implant</span>
-                  <span className="font-semibold text-gray-900">$3,000</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Orthodontics</span>
-                  <span className="font-semibold text-gray-900">$5,000+</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Wisdom Tooth Extraction</span>
-                  <span className="font-semibold text-gray-900">$450</span>
-                </li>
-                <li className="flex justify-between">
-                  <span className="text-gray-500">Periodontal Treatment</span>
-                  <span className="font-semibold text-gray-900">$800+</span>
-                </li>
-              </ul>
-              <Button variant="outline" size="medium" className="w-full">
-                Book Now
-              </Button>
-            </Card>
-          </div>
-          
-          <div className="text-center mt-12 text-gray-500">
-            <p>* Pricing may vary based on individual needs and complexity. Contact us for a personalized quote.</p>
+
+              <p className="text-[#1E63D5] text-center max-w-3xl mx-auto mb-10 leading-relaxed font-medium">
+                Every patient receives a comprehensive, itemized bill for all services rendered. We provide complete transparency in healthcare costs with detailed documentation for insurance claims and personal records.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-10">
+                <div className="bg-white rounded-xl py-8 px-6 shadow-sm flex flex-col items-center justify-center transition-transform hover:-translate-y-1">
+                  <span className="text-4xl font-bold text-[#1E63D5] mb-2">100%</span>
+                  <span className="text-sm text-[#1E63D5] font-medium">Transparent Billing</span>
+                </div>
+                <div className="bg-white rounded-xl py-8 px-6 shadow-sm flex flex-col items-center justify-center transition-transform hover:-translate-y-1">
+                  <span className="text-4xl font-bold text-[#1E63D5] mb-2">24/7</span>
+                  <span className="text-sm text-[#1E63D5] font-medium">Billing Support</span>
+                </div>
+                <div className="bg-white rounded-xl py-8 px-6 shadow-sm flex flex-col items-center justify-center transition-transform hover:-translate-y-1">
+                  <span className="text-4xl font-bold text-[#1E63D5] mb-2">Zero</span>
+                  <span className="text-sm text-[#1E63D5] font-medium">Hidden Charges</span>
+                </div>
+              </div>
+
+              <button className="bg-[#081A3A] hover:bg-gray-900 text-white font-medium rounded-lg px-8 py-4 flex items-center shadow-lg transition-colors">
+                Get Billing Information
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </section>
-      
-      
+
+
       <Footer />
     </div>
   );
