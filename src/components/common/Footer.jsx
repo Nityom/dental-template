@@ -44,12 +44,22 @@ const Footer = () => {
                 height={60}
                 className="h-12 md:h-14 w-auto"
               />
-              <div className="flex flex-col">
-                <span className="text-xl md:text-2xl font-extrabold">
-                  <span className="text-gray-400">KS</span>
-                  <span className="text-[#1E63D5]"> DENTAL</span>
-                </span>
-                <span className="text-[#1E63D5] font-light"> & AESTHETIC</span>
+              <div className="flex flex-col ml-1 w-auto">
+                <div className="flex items-baseline mb-0.5 gap-2 md:gap-3">
+                  <span className="text-[#4B4B4B] text-3xl md:text-[2.5rem] font-black uppercase tracking-tight leading-none">
+                    KS
+                  </span>
+                  <span className="bg-gradient-to-b from-[#4EBAED] to-[#1F7FC0] bg-clip-text text-transparent text-3xl md:text-[2.5rem] font-black uppercase tracking-tight leading-none">
+                    DENTAL
+                  </span>
+                </div>
+                <div className="flex items-center w-full mt-1">
+                  <div className="h-[1.5px] w-6 md:w-8 bg-gradient-to-r from-transparent to-[#4EBAED]"></div>
+                  <span className="text-[#4EBAED] text-[9px] md:text-[11px] font-bold tracking-[0.05em] mx-1.5 whitespace-nowrap">
+                    & AESTHETIC CLINIC
+                  </span>
+                  <div className="h-[1.5px] flex-grow bg-gradient-to-l from-transparent to-[#4EBAED]"></div>
+                </div>
               </div>
             </Link>
             <motion.p
