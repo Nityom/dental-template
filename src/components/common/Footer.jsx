@@ -72,13 +72,15 @@ const Footer = () => {
               className="flex gap-3"
               variants={staggerContainer(0.1, 0)}
             >
-              <motion.div
-                className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Image src="/images/img_twitter.svg" alt="Twitter" width={16} height={16} />
-              </motion.div>
+              <Link href="https://share.google/0e4f22cWCpQTiLwt6" target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Image src="/images/google.svg" alt="Google" width={16} height={16} />
+                </motion.div>
+              </Link>
               <Link href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer">
                 <motion.div
                   className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
@@ -86,6 +88,15 @@ const Footer = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Image src="/images/img_icon_02.svg" alt="Instagram" width={16} height={16} />
+                </motion.div>
+              </Link>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Image src="/images/facebook.svg" alt="Facebook" width={16} height={16} />
                 </motion.div>
               </Link>
               <motion.div
@@ -140,6 +151,9 @@ const Footer = () => {
                   </motion.li>
                   <motion.li variants={navItemAnimation}>
                     <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</Link>
+                  </motion.li>
+                  <motion.li variants={navItemAnimation}>
+                    <Link href="https://blog.ksdentalclinics.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">Blogs</Link>
                   </motion.li>
                 </motion.ul>
               )}

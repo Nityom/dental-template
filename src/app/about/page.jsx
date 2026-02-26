@@ -49,7 +49,7 @@ export default function AboutPage() {
                 The Journey of KS Dental & Aesthetic Clinic
               </h2>
               <p className="text-gray-500 text-base md:text-lg mb-4 md:mb-6 leading-relaxed">
-                Founded in 2008, KS Dental & Aesthetic Clinic began with a simple vision: to make quality dental care accessible and comfortable for all. Dr. Sarah Mitchell started her practice in a small office with just two dental chairs and a passion for changing how people experience dental visits.
+                Founded in 2008, KS Dental & Aesthetic Clinic began with a simple vision: to make quality dental care accessible and comfortable for all. Dr. Sarah Mitchell started her practice in a small clinic with just two dental chairs and a passion for changing how people experience dental visits.
               </p>
               <p className="text-gray-500 text-base md:text-lg mb-6 md:mb-8 leading-relaxed">
                 Today, we've grown into a state-of-the-art facility with multiple specialized dentists, but our core mission remains the same - to provide personalized, gentle dental care in a relaxed environment where patients feel valued and respected.

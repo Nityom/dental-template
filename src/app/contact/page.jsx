@@ -8,11 +8,12 @@ import ScrollToTop from '@/components/ui/ScrollToTop';
 import Image from 'next/image';
 import ContactForm from '@/components/common/ContactForm';
 
-export default function ContactPage() {  return (
+export default function ContactPage() {
+  return (
     <div className="min-h-screen bg-white">
       <Header />
       <ScrollToTop />
-        {/* Hero Section */}
+      {/* Hero Section */}
       <section className="bg-gray-900 text-white py-12 md:py-16 lg:py-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="max-w-2xl">
@@ -24,7 +25,7 @@ export default function ContactPage() {  return (
             </p>
           </div>
         </div>
-        
+
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10"></div>
         <div className="absolute top-32 right-32 w-32 h-32 bg-white opacity-5"></div>
@@ -42,20 +43,20 @@ export default function ContactPage() {  return (
               <h2 className="text-4xl font-semibold text-gray-900 mb-8 leading-tight">
                 We're Here For You
               </h2>
-              
+
               <div className="space-y-8 mb-12">
                 <div className="flex items-start gap-6">
                   <div className="bg-[#1E63D5] p-4 rounded-lg">
-                    <Image 
-                      src="/images/img_mappin.svg" 
-                      alt="Location" 
-                      width={24} 
+                    <Image
+                      src="/images/img_mappin.svg"
+                      alt="Location"
+                      width={24}
                       height={24}
-                      className="invert" 
+                      className="invert"
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Visit Our Office</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Visit Our Clinic</h3>
                     <p className="text-gray-500">
                       Kalambagh road, Lenin Chowk<br />
                       Muzaffarpur, Bihar<br />
@@ -63,15 +64,15 @@ export default function ContactPage() {  return (
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-6">
                   <div className="bg-[#1E63D5] p-4 rounded-lg">
-                    <Image 
-                      src="/images/img_phone.svg" 
-                      alt="Phone" 
-                      width={24} 
+                    <Image
+                      src="/images/img_phone.svg"
+                      alt="Phone"
+                      width={24}
                       height={24}
-                      className="invert" 
+                      className="invert"
                     />
                   </div>
                   <div>
@@ -82,15 +83,15 @@ export default function ContactPage() {  return (
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-6">
                   <div className="bg-[#1E63D5] p-4 rounded-lg">
-                    <Image 
-                      src="/images/img_mail.svg" 
-                      alt="Email" 
-                      width={24} 
+                    <Image
+                      src="/images/img_mail.svg"
+                      alt="Email"
+                      width={24}
                       height={24}
-                      className="invert" 
+                      className="invert"
                     />
                   </div>
                   <div>
@@ -102,16 +103,16 @@ export default function ContactPage() {  return (
                   </div>
                 </div>
               </div>
-              
+
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Follow Us</h3>
                 <div className="flex gap-4">
-                  <div className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
-                    <Image src="/images/img_facebook.svg" alt="Facebook" width={24} height={24} />
-                  </div>
-                  <div className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
-                    <Image src="/images/img_twitter.svg" alt="Twitter" width={24} height={24} />
-                  </div>
+                  <a href="#" target="_blank" rel="noopener noreferrer" className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
+                    <Image src="/images/facebook.svg" alt="Facebook" width={24} height={24} />
+                  </a>
+                  <a href="https://share.google/0e4f22cWCpQTiLwt6" target="_blank" rel="noopener noreferrer" className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
+                    <Image src="/images/google.svg" alt="Google" width={24} height={24} />
+                  </a>
                   <a href="https://www.instagram.com/ksdentalaesthetic" target="_blank" rel="noopener noreferrer" className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
                     <Image src="/images/img_icon_02.svg" alt="Instagram" width={24} height={24} />
                   </a>
@@ -121,18 +122,18 @@ export default function ContactPage() {  return (
                 </div>
               </div>
             </div>
-            
+
             {/* Contact Form */}
             <div>
               <ContactForm />
             </div>
           </div>
         </div>
-      </section>      {/* Office Hours Section */}
+      </section>      {/* Clinic Hours Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <p className="text-[#1E63D5] font-medium mb-4">Office Hours</p>
+            <p className="text-[#1E63D5] font-medium mb-4">Clinic Hours</p>
             <h2 className="text-4xl font-semibold text-gray-900 mb-6 leading-tight">
               When You Can Visit Us
             </h2>
@@ -140,7 +141,7 @@ export default function ContactPage() {  return (
               We offer flexible hours to accommodate your busy schedule. Emergency appointments are also available.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="p-8">
               <h3 className="text-2xl font-semibold text-gray-900 mb-6 text-center">Regular Hours</h3>
@@ -159,7 +160,7 @@ export default function ContactPage() {  return (
                 </li>
               </ul>
             </Card>
-            
+
             <Card className="p-8 !bg-[#081A3A] !border-[#081A3A] text-white">
               <h3 className="text-2xl font-semibold mb-6 text-center">Emergency Care</h3>
               <p className="mb-6 leading-relaxed text-gray-200">
@@ -187,9 +188,9 @@ export default function ContactPage() {  return (
               We are conveniently located at Kalambagh road, Lenin Chowk, Muzaffarpur, Bihar, opposite to Prashant Honda.
             </p>
           </div>
-          
+
           <div className="rounded-lg overflow-hidden shadow-lg h-96 md:h-[500px]">
-            <iframe 
+            <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.5!2d85.3768857!3d26.1193997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed11685fca49b5%3A0xeaa4da4705a1641e!2sKS%20Dental%20%26%20Aesthetic%20Clinic!5e0!3m2!1sen!2s!4v1708348800000!5m2!1sen!2s"
               width="100%"
               height="100%"
@@ -200,7 +201,7 @@ export default function ContactPage() {  return (
               title="KS Dental & Aesthetic Clinic Location"
             />
           </div>
-          
+
           <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-3">
               <div className="bg-[#1E63D5] p-3 rounded-full">
@@ -229,7 +230,7 @@ export default function ContactPage() {  return (
           </div>
         </div>
       </section>
-        {/* FAQ Section */}
+      {/* FAQ Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
@@ -241,17 +242,17 @@ export default function ContactPage() {  return (
               Find answers to the most frequently asked questions about our services and appointments.
             </p>
           </div>
-          
+
           <div className="max-w-3xl mx-auto">
             <div className="space-y-6">
               {[
                 {
                   question: "How do I schedule an appointment?",
-                  answer: "You can schedule an appointment by calling our office, using the contact form on our website, or sending us an email. We'll respond to your request as soon as possible to confirm your appointment time."
+                  answer: "You can schedule an appointment by calling our clinic, using the contact form on our website, or sending us an email. We'll respond to your request as soon as possible to confirm your appointment time."
                 },
                 {
                   question: "Do you accept dental insurance?",
-                  answer: "Yes, we accept most major dental insurance plans. Please contact our office to verify that we accept your specific insurance provider and plan."
+                  answer: "Yes, we accept most major dental insurance plans. Please contact our clinic to verify that we accept your specific insurance provider and plan."
                 },
                 {
                   question: "What should I bring to my first appointment?",
@@ -279,9 +280,9 @@ export default function ContactPage() {  return (
           </div>
         </div>
       </section>
-      
+
       {/* CTA Section */}
-     
+
       <Footer />
     </div>
   );

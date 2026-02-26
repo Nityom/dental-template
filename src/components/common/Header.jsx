@@ -114,6 +114,11 @@ const Header = () => {
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
+              <Link href="https://blog.ksdentalclinics.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-[#1E63D5] transition-colors">
+                Blogs
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
               <Link href="/contact" className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === '/contact' ? 'text-[#1E63D5] font-medium' : ''}`}>
                 Contact Us
               </Link>
@@ -212,6 +217,20 @@ const Header = () => {
                     className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/pages' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
                   >
                     Page
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  variants={navItemAnimation}
+                  whileHover={{ backgroundColor: '#F2F8FF' }}
+                >
+                  <Link
+                    href="https://blog.ksdentalclinics.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-3 border-b border-gray-100 block text-gray-900"
+                  >
+                    Blogs
                   </Link>
                 </motion.div>
 
