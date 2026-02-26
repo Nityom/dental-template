@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
@@ -7,9 +6,71 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Image from 'next/image';
+
+export const metadata = {
+  title: 'Home', // Will be injected into template as "Home | KS Dental & Aesthetic Clinic"
+  description: 'Welcome to KS Dental & Aesthetic Clinic. We provide comprehensive dental care, advanced orthodontics, and cosmetic dentistry in Muzaffarpur, Bihar.',
+  alternates: {
+    canonical: '/',
+  },
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['Dentist', 'MedicalClinic', 'LocalBusiness'],
+  name: 'KS Dental & Aesthetic Clinic',
+  image: 'https://ksdentalclinic.com/clinic/interior.png',
+  '@id': 'https://ksdentalclinic.com',
+  url: 'https://ksdentalclinic.com',
+  telephone: '+919288050250',
+  email: 'ksdentalclinics@gmail.com',
+  priceRange: '₹₹',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Kalambagh road, Lenin Chowk',
+    addressLocality: 'Muzaffarpur',
+    addressRegion: 'Bihar',
+    postalCode: '842001', // Update with the actual postal code
+    addressCountry: 'IN'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: '26.1209', // Approximate latitude for Muzaffarpur; update with exact clinic coordinates for best local SEO
+    longitude: '85.3647' // Approximate longitude for Muzaffarpur
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '09:00',
+      closes: '21:00'
+    }
+  ],
+  medicalSpecialty: [
+    'Dentistry',
+    'Orthodontic',
+    'Cosmetic',
+    'Implantology'
+  ],
+  sameAs: [
+    // Add clinic social media links here e.g.,
+    // "https://www.facebook.com/KSDentalClinic",
+    // "https://www.instagram.com/ksdentalclinic"
+  ],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9', // Consider pulling dynamic rating later if connected to Google Business Profile or standardizing standard reviews
+    reviewCount: '150'
+  }
+};
+
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <HeroSection />
       <ScrollToTop />

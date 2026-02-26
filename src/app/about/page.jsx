@@ -1,4 +1,3 @@
-'use client';
 import React from 'react';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
@@ -6,6 +5,11 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Image from 'next/image';
+
+export const metadata = {
+  title: 'About Us | KS Dental & Aesthetic Clinic',
+  description: 'Learn about the journey, values, and expert team at KS Dental & Aesthetic Clinic. Over 15 years of exceptional dental and aesthetic care in Muzaffarpur.',
+};
 
 export default function AboutPage() {
   return (
