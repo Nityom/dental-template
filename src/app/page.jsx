@@ -5,6 +5,7 @@ import HeroSection from '@/components/common/HeroSection';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
+import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import Image from 'next/image';
 
 export const metadata = {
@@ -151,15 +152,15 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">780+</h3>
+              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4"><AnimatedCounter to={780} suffix="+" /></h3>
               <p className="text-gray-200 text-lg">Happy Patient</p>
             </div>
             <div>
-              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">560+</h3>
+              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4"><AnimatedCounter to={560} suffix="+" /></h3>
               <p className="text-gray-200 text-lg">Online Appointment</p>
             </div>
             <div>
-              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4">340+</h3>
+              <h3 className="text-7xl font-semibold text-[#25D9FF] mb-4"><AnimatedCounter to={340} suffix="+" /></h3>
               <p className="text-gray-200 text-lg">Winning Award</p>
             </div>
           </div>
@@ -188,7 +189,7 @@ export default function HomePage() {
             </div>
             <div className="space-y-8">
               <div className="flex items-start gap-6">
-                <div className="bg-[#1E63D5] p-6 rounded-lg">
+                <div className="bg-[#1E63D5] p-6 rounded-lg flex-shrink-0">
                   <Image src="/images/img_whitening.svg" alt="Teeth whitening" width={44} height={44} />
                 </div>
                 <div>
@@ -200,7 +201,7 @@ export default function HomePage() {
               </div>
               <hr className="border-gray-300" />
               <div className="flex items-start gap-6">
-                <div className="bg-[#1E63D5] p-6 rounded-lg">
+                <div className="bg-[#1E63D5] p-6 rounded-lg flex-shrink-0">
                   <Image src="/images/img_tooth_insurance.svg" alt="Teeth checkup" width={44} height={44} />
                 </div>
                 <div>
@@ -212,7 +213,7 @@ export default function HomePage() {
               </div>
               <hr className="border-gray-300" />
               <div className="flex items-start gap-6">
-                <div className="bg-[#1E63D5] p-6 rounded-lg">
+                <div className="bg-[#1E63D5] p-6 rounded-lg flex-shrink-0">
                   <Image src="/images/img_implant.svg" alt="Teeth implants" width={44} height={44} />
                 </div>
                 <div>
