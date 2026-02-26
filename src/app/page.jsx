@@ -9,7 +9,6 @@ import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import Image from 'next/image';
 
 export const metadata = {
-  title: 'Home', // Will be injected into template as "Home | KS Dental & Aesthetic Clinic"
   description: 'Welcome to KS Dental & Aesthetic Clinic. We provide comprehensive dental care, advanced orthodontics, and cosmetic dentistry in Muzaffarpur, Bihar.',
   alternates: {
     canonical: '/',
