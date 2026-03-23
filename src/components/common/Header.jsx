@@ -131,14 +131,16 @@ const Header = () => {
               whileTap="tap"
               variants={navItemAnimation}
             >
-              <Button
-                variant="primary"
-                size="medium"
-                className="hidden sm:flex bg-[#1E63D5] hover:bg-[#25D9FF] px-4 py-2 md:px-6 md:py-3"
-              >
-                Book Appointment
-                <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
-              </Button>
+              <Link href="/book-appointment">
+                <Button
+                  variant="primary"
+                  size="medium"
+                  className="hidden sm:flex bg-[#1E63D5] hover:bg-[#25D9FF] px-4 py-2 md:px-6 md:py-3"
+                >
+                  Book Appointment
+                  <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
+                </Button>
+              </Link>
             </motion.div>
 
             {/* Mobile Menu Button */}
@@ -251,14 +253,16 @@ const Header = () => {
                   variants={navItemAnimation}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <Button
-                    variant="primary"
-                    size="medium"
-                    className="w-full bg-[#1E63D5] hover:bg-[#25D9FF] flex items-center justify-center"
-                  >
-                    Book Appointment
-                    <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
-                  </Button>
+                  <Link href="/book-appointment">
+                    <Button
+                      variant="primary"
+                      size="medium"
+                      className="w-full bg-[#1E63D5] hover:bg-[#25D9FF] flex items-center justify-center"
+                    >
+                      Book Appointment
+                      <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
+                    </Button>
+                  </Link>
                 </motion.div>
               </nav>
             </motion.div>
