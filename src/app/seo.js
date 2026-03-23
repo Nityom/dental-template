@@ -1,5 +1,5 @@
 export const siteConfig = {
-  url: 'https://ksdentalclinic.com',
+  url: 'https://www.ksdentalclinics.com',
   name: 'KS Dental & Aesthetic Clinic',
   shortName: 'KS Dental Clinic',
   description:
