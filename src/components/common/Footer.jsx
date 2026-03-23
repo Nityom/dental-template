@@ -150,6 +150,9 @@ const Footer = () => {
                     <Link href="/services" className="text-gray-300 hover:text-white transition-colors">Services</Link>
                   </motion.li>
                   <motion.li variants={navItemAnimation}>
+                    <Link href="/locations" className="text-gray-300 hover:text-white transition-colors">Locations</Link>
+                  </motion.li>
+                  <motion.li variants={navItemAnimation}>
                     <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">Contact Us</Link>
                   </motion.li>
                   <motion.li variants={navItemAnimation}>
@@ -180,10 +183,14 @@ const Footer = () => {
               </div>
             </div>
             <ul className={`space-y-3 md:space-y-4 ${openSection === 'services' ? 'block' : 'hidden md:block'}`}>
-              <li><Link href="/services/whitening" className="text-gray-300 hover:text-white transition-colors">Teeth Whitening</Link></li>
-              <li><Link href="/services/checkup" className="text-gray-300 hover:text-white transition-colors">Teeth Checkup</Link></li>
-              <li><Link href="/services/filling" className="text-gray-300 hover:text-white transition-colors">Dental Filling</Link></li>
-              <li><Link href="/services/implants" className="text-gray-300 hover:text-white transition-colors">Teeth Implants</Link></li>
+              <li><Link href="/services/general-dental-checkup" className="text-gray-300 hover:text-white transition-colors">General Dental Checkup</Link></li>
+              <li><Link href="/services/dental-fillings" className="text-gray-300 hover:text-white transition-colors">Dental Fillings</Link></li>
+              <li><Link href="/services/orthodontics-braces-aligners" className="text-gray-300 hover:text-white transition-colors">Braces and Aligners</Link></li>
+              <li><Link href="/services/dental-implants" className="text-gray-300 hover:text-white transition-colors">Dental Implants</Link></li>
+              <li><Link href="/services/root-canal-oral-surgery" className="text-gray-300 hover:text-white transition-colors">Root Canal and Oral Surgery</Link></li>
+              <li><Link href="/services/teeth-scaling-polishing" className="text-gray-300 hover:text-white transition-colors">Teeth Scaling and Polishing</Link></li>
+              <li><Link href="/locations/lenin-chowk" className="text-gray-300 hover:text-white transition-colors">Dentist Near Lenin Chowk</Link></li>
+              <li><Link href="/locations/kalambagh-road" className="text-gray-300 hover:text-white transition-colors">Clinic Near Kalambagh Road</Link></li>
             </ul>
           </div>
 

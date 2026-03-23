@@ -7,61 +7,56 @@ import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import AnimatedCounter from '@/components/ui/AnimatedCounter';
 import Image from 'next/image';
+import Link from 'next/link';
+import {
+  absoluteUrl,
+  buildPageMetadata,
+  getFaqJsonLd,
+  getMedicalClinicJsonLd,
+  getWebsiteJsonLd,
+} from './seo';
 
-export const metadata = {
-  description: 'Welcome to KS Dental & Aesthetic Clinic. We provide comprehensive dental care, advanced orthodontics, and cosmetic dentistry in Muzaffarpur, Bihar.',
-  alternates: {
-    canonical: '/',
+export const metadata = buildPageMetadata({
+  title: 'Best Dentist in Muzaffarpur',
+  description:
+    'Welcome to KS Dental & Aesthetic Clinic. We provide comprehensive dental care, advanced orthodontics, and cosmetic dentistry in Muzaffarpur, Bihar.',
+  path: '/',
+  keywords: [
+    'dentist in Muzaffarpur',
+    'dental clinic Muzaffarpur',
+    'aesthetic clinic Muzaffarpur',
+    'orthodontist in Bihar',
+  ],
+});
+
+const homeFaqs = [
+  {
+    question: 'How often should I get a dental checkup?',
+    answer:
+      'Most patients should visit every 6 months for preventive checkups, cleaning, and early detection of dental issues.',
   },
-};
+  {
+    question: 'Do you provide braces and clear aligners?',
+    answer:
+      'Yes, we provide orthodontic care including braces and clear aligners after a complete evaluation by our specialists.',
+  },
+  {
+    question: 'Can I book an appointment online?',
+    answer:
+      'Yes, you can book online through the appointment page, and our team will confirm your preferred slot.',
+  },
+];
 
-const jsonLd = {
+const homeJsonLd = {
   '@context': 'https://schema.org',
-  '@type': ['Dentist', 'MedicalClinic', 'LocalBusiness'],
-  name: 'KS Dental & Aesthetic Clinic',
-  image: 'https://ksdentalclinic.com/clinic/interior.png',
-  '@id': 'https://ksdentalclinic.com',
-  url: 'https://ksdentalclinic.com',
-  telephone: '+919288050250',
-  email: 'ksdentalclinics@gmail.com',
-  priceRange: '₹₹',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Kalambagh road, Lenin Chowk',
-    addressLocality: 'Muzaffarpur',
-    addressRegion: 'Bihar',
-    postalCode: '842001', // Update with the actual postal code
-    addressCountry: 'IN'
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: '26.1209', // Approximate latitude for Muzaffarpur; update with exact clinic coordinates for best local SEO
-    longitude: '85.3647' // Approximate longitude for Muzaffarpur
-  },
-  openingHoursSpecification: [
+  '@graph': [
     {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '09:00',
-      closes: '21:00'
-    }
+      ...getMedicalClinicJsonLd(),
+      image: absoluteUrl('/clinic/interior.png'),
+    },
+    getWebsiteJsonLd(),
+    getFaqJsonLd(homeFaqs),
   ],
-  medicalSpecialty: [
-    'Dentistry',
-    'Orthodontic',
-    'Cosmetic',
-    'Implantology'
-  ],
-  sameAs: [
-    // Add clinic social media links here e.g.,
-    // "https://www.facebook.com/KSDentalClinic",
-    // "https://www.instagram.com/ksdentalclinic"
-  ],
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9', // Consider pulling dynamic rating later if connected to Google Business Profile or standardizing standard reviews
-    reviewCount: '150'
-  }
 };
 
 export default function HomePage() {
@@ -69,7 +64,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
       <Header />
       <HeroSection />
@@ -192,7 +187,11 @@ export default function HomePage() {
                   <Image src="/images/img_whitening.svg" alt="Teeth whitening" width={44} height={44} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">Teeth Whitening</h3>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                      <Link href="/services/teeth-scaling-polishing" className="hover:text-[#1E63D5] transition-colors">
+                        Teeth Whitening
+                      </Link>
+                    </h3>
                   <p className="text-gray-500 leading-relaxed">
                     Professional teeth whitening treatments that brighten your smile safely and effectively, removing years of stains for a confident, radiant appearance.
                   </p>
@@ -204,7 +203,11 @@ export default function HomePage() {
                   <Image src="/images/img_tooth_insurance.svg" alt="Teeth checkup" width={44} height={44} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">Teeth Checkup</h3>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                      <Link href="/services/general-dental-checkup" className="hover:text-[#1E63D5] transition-colors">
+                        Teeth Checkup
+                      </Link>
+                    </h3>
                   <p className="text-gray-500 leading-relaxed">
                     Regular dental checkups are essential for maintaining optimal oral health. Our comprehensive examinations help detect and prevent dental issues early.
                   </p>
@@ -216,16 +219,23 @@ export default function HomePage() {
                   <Image src="/images/img_implant.svg" alt="Teeth implants" width={44} height={44} />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">Teeth Implants</h3>
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                      <Link href="/services/dental-implants" className="hover:text-[#1E63D5] transition-colors">
+                        Teeth Implants
+                      </Link>
+                    </h3>
                   <p className="text-gray-500 leading-relaxed">
                     Permanent dental implants provide natural-looking and feeling tooth replacements that restore both function and aesthetics to your smile.
                   </p>
                 </div>
               </div>
               <div className="pt-4">
-                <Button variant="primary" size="large">
-                  All Services
-                </Button>
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center justify-center bg-[#1E63D5] text-white hover:bg-[#25D9FF] px-8 py-4 rounded-lg text-lg font-medium transition-colors"
+                  >
+                    All Services
+                  </Link>
               </div>
             </div>
           </div>

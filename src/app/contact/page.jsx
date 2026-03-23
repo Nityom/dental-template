@@ -6,11 +6,60 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Image from 'next/image';
+import Link from 'next/link';
 import ContactForm from '@/components/common/ContactForm';
+import { businessConfig, getFaqJsonLd, getMedicalClinicJsonLd, siteConfig } from '../seo';
+
+const contactFaqs = [
+  {
+    question: 'How do I schedule an appointment?',
+    answer:
+      'You can schedule by phone, email, or by submitting the appointment form on the website.',
+  },
+  {
+    question: 'What are your clinic working hours?',
+    answer:
+      'Our regular timings are Monday to Friday from 9:00 AM to 7:00 PM and Saturday from 9:00 AM to 5:00 PM.',
+  },
+  {
+    question: 'Where is the clinic located in Muzaffarpur?',
+    answer:
+      'We are located on Kalambagh road, Lenin Chowk, Muzaffarpur, opposite Prashant Honda.',
+  },
+];
 
 export default function ContactPage() {
+  const contactPageJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: `Contact ${siteConfig.name}`,
+    url: `${siteConfig.url}/contact`,
+    about: {
+      '@id': `${siteConfig.url}#medical-clinic`,
+    },
+    mainEntity: {
+      '@type': 'Organization',
+      name: siteConfig.name,
+      email: businessConfig.email,
+      telephone: businessConfig.phone,
+    },
+  };
+
+  const contactPageGraph = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      getMedicalClinicJsonLd(),
+      contactPageJsonLd,
+      getFaqJsonLd(contactFaqs),
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageGraph) }}
+      />
       <Header />
       <ScrollToTop />
       {/* Hero Section */}
@@ -277,6 +326,39 @@ export default function ContactPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-16 lg:py-20 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <p className="text-[#1E63D5] font-medium mb-4">Quick Navigation</p>
+            <h2 className="text-4xl font-semibold text-gray-900 mb-4 leading-tight">
+              Popular Treatments and Nearby Area Pages
+            </h2>
+            <p className="text-gray-500 text-lg max-w-3xl mx-auto">
+              Use these pages to quickly review treatment details and location-focused information before booking.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link href="/services/general-dental-checkup" className="border border-gray-200 rounded-lg p-5 hover:border-[#1E63D5] transition-colors">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">General Checkup</h3>
+              <p className="text-gray-600 text-sm">Preventive checkups and oral health assessment details.</p>
+            </Link>
+            <Link href="/services/root-canal-oral-surgery" className="border border-gray-200 rounded-lg p-5 hover:border-[#1E63D5] transition-colors">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Root Canal and Surgery</h3>
+              <p className="text-gray-600 text-sm">Infection management and advanced procedure information.</p>
+            </Link>
+            <Link href="/locations/mithanpura" className="border border-gray-200 rounded-lg p-5 hover:border-[#1E63D5] transition-colors">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Patients from Mithanpura</h3>
+              <p className="text-gray-600 text-sm">Service-area page and nearby care information.</p>
+            </Link>
+            <Link href="/locations/zero-mile" className="border border-gray-200 rounded-lg p-5 hover:border-[#1E63D5] transition-colors">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Patients from Zero Mile</h3>
+              <p className="text-gray-600 text-sm">Access clinic and treatment pages relevant to your area.</p>
+            </Link>
           </div>
         </div>
       </section>

@@ -6,9 +6,90 @@ import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 import Image from 'next/image';
+import Link from 'next/link';
+import { getFaqJsonLd, getServicesJsonLd } from '../seo';
+import { getTreatmentByTitle } from './treatmentsData';
+
+const servicesForSchema = [
+  {
+    title: 'General Dental Checkup',
+    description:
+      'Comprehensive oral examinations to assess your dental health and detect potential issues early.',
+  },
+  {
+    title: 'Dental Fillings',
+    description:
+      'Tooth-colored fillings to restore decayed or damaged teeth and preserve oral function.',
+  },
+  {
+    title: 'Teeth Alignment Orthodontics',
+    description:
+      'Orthodontic treatment options including braces and clear aligners to improve bite and smile aesthetics.',
+  },
+  {
+    title: 'Dental Implants',
+    description:
+      'Permanent tooth replacement solutions designed to look and function like natural teeth.',
+  },
+  {
+    title: 'Sleep Apnea Treatment',
+    description:
+      'Custom oral appliance therapy to help improve airflow and reduce sleep apnea symptoms.',
+  },
+  {
+    title: 'Crown, Bridge, Veneers',
+    description:
+      'Restorative and cosmetic dentistry solutions to repair damaged teeth and enhance smiles.',
+  },
+  {
+    title: 'Periodontal Treatment',
+    description:
+      'Gum care treatments to manage periodontal disease and protect supporting tooth structures.',
+  },
+  {
+    title: 'Laser Dental Procedures',
+    description:
+      'Minimally invasive dental procedures using advanced laser technology for precise treatment.',
+  },
+  {
+    title: 'Teeth Scaling and Polishing',
+    description:
+      'Professional cleaning to remove plaque, tartar, and stains for healthier gums and brighter teeth.',
+  },
+  {
+    title: 'Root Canal and Oral Surgery',
+    description:
+      'Endodontic and oral surgery treatments to eliminate infection and preserve oral health.',
+  },
+  {
+    title: 'Facial Skin Rejuvenation and Anti Ageing',
+    description:
+      'Aesthetic facial treatments for skin tightening, texture improvement, and wrinkle reduction.',
+  },
+];
+
+const servicesFaqs = [
+  {
+    question: 'Which dental services do you offer?',
+    answer:
+      'We provide preventive, restorative, orthodontic, implant, periodontal, laser, and cosmetic dental treatments.',
+  },
+  {
+    question: 'How do I know which treatment is right for me?',
+    answer:
+      'Our dentists perform a full examination and recommend a personalized treatment plan based on your oral condition and goals.',
+  },
+  {
+    question: 'Do I need an appointment for all treatments?',
+    answer:
+      'Yes, booking an appointment helps us reserve enough time for consultation, diagnostics, and treatment.',
+  },
+];
 
 export default function ServicesPage() {
   const [expandedCard, setExpandedCard] = useState(null);
+  const servicesJsonLd = getServicesJsonLd(servicesForSchema);
+  const faqJsonLd = getFaqJsonLd(servicesFaqs);
 
   const toggleCard = (index) => {
     setExpandedCard(expandedCard === index ? null : index);
@@ -16,6 +97,14 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Header />
       <ScrollToTop />
 
@@ -332,6 +421,10 @@ export default function ServicesPage() {
                 }
               }
             ].map((service, index) => (
+              (() => {
+                const treatmentPage = getTreatmentByTitle(service.title);
+
+                return (
               <Card
                 key={index}
                 className={`p-8 hover:shadow-xl transition-all duration-500 ${expandedCard === index ? 'md:col-span-3' : 'md:col-span-1'
@@ -366,6 +459,15 @@ export default function ServicesPage() {
                         className={`ml-2 transition-transform duration-500 ${expandedCard === index ? 'rotate-90' : ''}`}
                       />
                     </button>
+
+                    {treatmentPage && (
+                      <Link
+                        href={`/services/${treatmentPage.slug}`}
+                        className="mt-3 inline-flex items-center text-sm text-gray-600 hover:text-[#1E63D5] transition-colors"
+                      >
+                        Visit dedicated treatment page
+                      </Link>
+                    )}
                   </div>
 
                   {/* Expanded Details */}
@@ -448,6 +550,8 @@ export default function ServicesPage() {
                   </div>
                 </div>
               </Card>
+                );
+              })()
             ))}
           </div>
         </div>
@@ -499,9 +603,12 @@ export default function ServicesPage() {
                   <span className="text-gray-500">Safe for teeth and gums</span>
                 </li>
               </ul>
-              <Button variant="primary" size="large">
+              <Link
+                href="/services/orthodontics-braces-aligners"
+                className="inline-flex items-center justify-center bg-[#1E63D5] text-white hover:bg-[#25D9FF] px-8 py-4 rounded-lg text-lg font-medium transition-colors"
+              >
                 Learn More
-              </Button>
+              </Link>
             </div>
             <div className="relative">
               <div className="bg-gray-900 rounded-lg h-96 relative overflow-hidden">
