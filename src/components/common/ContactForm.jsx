@@ -1,8 +1,34 @@
 'use client';
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
 import { supabase } from '@/utils/supabase';
+
+const WHATSAPP_NUMBER = '919288050250';
+
+const TIME_SLOTS = [
+  { value: '11:00', label: '11:00 AM' },
+  { value: '11:30', label: '11:30 AM' },
+  { value: '12:00', label: '12:00 PM' },
+  { value: '12:30', label: '12:30 PM' },
+  { value: '13:00', label: '01:00 PM' },
+  { value: '13:30', label: '01:30 PM' },
+  { value: '14:00', label: '02:00 PM' },
+  { value: '14:30', label: '02:30 PM' },
+  { value: '15:00', label: '03:00 PM' },
+  { value: '15:30', label: '03:30 PM' },
+  { value: '16:00', label: '04:00 PM' },
+  { value: '16:30', label: '04:30 PM' },
+  { value: '17:00', label: '05:00 PM' },
+  { value: '17:30', label: '05:30 PM' },
+  { value: '18:00', label: '06:00 PM' },
+];
+
+const getTodayLocalDate = () => {
+  const now = new Date();
+  const timezoneOffsetMs = now.getTimezoneOffset() * 60000;
+  return new Date(now.getTime() - timezoneOffsetMs).toISOString().split('T')[0];
+};
 
 export default function ContactForm() {
   const [fullName, setFullName] = useState('');
@@ -10,10 +36,33 @@ export default function ContactForm() {
   const [appointmentDate, setAppointmentDate] = useState('');
   const [appointmentTime, setAppointmentTime] = useState('');
   const [dentalProblem, setDentalProblem] = useState('');
+  const [bookedSlots, setBookedSlots] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [modalType, setModalType] = useState('error'); // 'error' | 'success'
+  const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState('');
+  const minAppointmentDate = getTodayLocalDate();
+
+  const fetchBookedSlots = useCallback(async (date) => {
+    if (!date) {
+      setBookedSlots([]);
+      return;
+    }
+
+    const { data, error } = await supabase
+      .from('appointments')
+      .select('appointment_time')
+      .eq('appointment_date', date);
+
+    if (error) {
+      console.error('Error fetching booked slots:', error);
+      setBookedSlots([]);
+      return;
+    }
+
+    setBookedSlots(data.map((slot) => slot.appointment_time));
+  }, []);
 
   const checkSlotAvailability = useCallback(async (date, time) => {
     if (!date || !time) return true;
@@ -44,23 +93,78 @@ export default function ContactForm() {
     }
   }, [checkSlotAvailability]);
 
+  useEffect(() => {
+    fetchBookedSlots(appointmentDate);
+  }, [appointmentDate, fetchBookedSlots]);
+
+  useEffect(() => {
+    if (appointmentTime && bookedSlots.includes(appointmentTime)) {
+      setAppointmentTime('');
+      setModalType('error');
+      setModalMessage('The selected slot is already booked. Please choose another time.');
+      setShowModal(true);
+    }
+  }, [appointmentTime, bookedSlots]);
+
+  const buildWhatsAppUrl = useCallback((details) => {
+    const message = [
+      'New Appointment Request',
+      `Name: ${details.fullName}`,
+      `Phone: ${details.phone}`,
+      `Date: ${details.appointmentDate}`,
+      `Time: ${details.appointmentTime}`,
+      `Dental Problem: ${details.dentalProblem}`,
+    ].join('\n');
+
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  }, []);
+
   const handleDateChange = (e) => {
     const newDate = e.target.value;
+
+    if (newDate && newDate < minAppointmentDate) {
+      setModalType('error');
+      setModalMessage('Please choose today or a future date for your appointment.');
+      setShowModal(true);
+      return;
+    }
+
     setAppointmentDate(newDate);
     handleDateTimeChange(newDate, appointmentTime);
   };
 
   const handleTimeChange = (e) => {
     const newTime = e.target.value;
+
+    if (bookedSlots.includes(newTime)) {
+      setModalType('error');
+      setModalMessage('This time slot is already booked. Please select another slot.');
+      setShowModal(true);
+      return;
+    }
+
     setAppointmentTime(newTime);
     handleDateTimeChange(appointmentDate, newTime);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setWhatsAppFallbackUrl('');
+
+    const pendingWhatsAppWindow = typeof window !== 'undefined' ? window.open('about:blank', '_blank') : null;
+
     if (!fullName || !phone || !appointmentDate || !appointmentTime || !dentalProblem) {
+      if (pendingWhatsAppWindow) pendingWhatsAppWindow.close();
       setModalType('error');
       setModalMessage('Please fill in all fields before booking.');
+      setShowModal(true);
+      return;
+    }
+
+    if (appointmentDate < minAppointmentDate) {
+      if (pendingWhatsAppWindow) pendingWhatsAppWindow.close();
+      setModalType('error');
+      setModalMessage('Please choose today or a future date for your appointment.');
       setShowModal(true);
       return;
     }
@@ -69,6 +173,7 @@ export default function ContactForm() {
 
     const available = await checkSlotAvailability(appointmentDate, appointmentTime);
     if (!available) {
+      if (pendingWhatsAppWindow) pendingWhatsAppWindow.close();
       setModalType('error');
       setModalMessage(
         'This slot is already booked! We recommend choosing a different date or time for your appointment.'
@@ -89,6 +194,7 @@ export default function ContactForm() {
     ]);
 
     if (error) {
+      if (pendingWhatsAppWindow) pendingWhatsAppWindow.close();
       if (error.code === '23505') {
         setModalType('error');
         setModalMessage(
@@ -107,6 +213,21 @@ export default function ContactForm() {
     setModalType('success');
     setModalMessage('Your appointment has been booked successfully! We will contact you shortly to confirm.');
     setShowModal(true);
+    const whatsappUrl = buildWhatsAppUrl({
+      fullName,
+      phone,
+      appointmentDate,
+      appointmentTime,
+      dentalProblem,
+    });
+
+    if (pendingWhatsAppWindow) {
+      pendingWhatsAppWindow.location.href = whatsappUrl;
+    } else if (typeof window !== 'undefined') {
+      window.open(whatsappUrl, '_blank');
+    }
+
+    setWhatsAppFallbackUrl(whatsappUrl);
     setFullName('');
     setPhone('');
     setAppointmentDate('');
@@ -158,7 +279,7 @@ export default function ContactForm() {
                 id="appointmentDate"
                 value={appointmentDate}
                 onChange={handleDateChange}
-                min={new Date().toISOString().split('T')[0]}
+                min={minAppointmentDate}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E63D5] focus:border-transparent"
                 placeholder="dd/mm/yyyy"
               />
@@ -171,24 +292,18 @@ export default function ContactForm() {
                 id="appointmentTime"
                 value={appointmentTime}
                 onChange={handleTimeChange}
+                disabled={!appointmentDate}
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1E63D5] focus:border-transparent"
               >
-                <option value="" disabled>Select Time</option>
-                <option value="11:00">11:00 AM</option>
-                <option value="11:30">11:30 AM</option>
-                <option value="12:00">12:00 PM</option>
-                <option value="12:30">12:30 PM</option>
-                <option value="13:00">01:00 PM</option>
-                <option value="13:30">01:30 PM</option>
-                <option value="14:00">02:00 PM</option>
-                <option value="14:30">02:30 PM</option>
-                <option value="15:00">03:00 PM</option>
-                <option value="15:30">03:30 PM</option>
-                <option value="16:00">04:00 PM</option>
-                <option value="16:30">04:30 PM</option>
-                <option value="17:00">05:00 PM</option>
-                <option value="17:30">05:30 PM</option>
-                <option value="18:00">06:00 PM</option>
+                <option value="" disabled>{appointmentDate ? 'Select Time' : 'Select date first'}</option>
+                {TIME_SLOTS.map((slot) => {
+                  const isBooked = bookedSlots.includes(slot.value);
+                  return (
+                    <option key={slot.value} value={slot.value} disabled={isBooked}>
+                      {isBooked ? `${slot.label} (Booked)` : slot.label}
+                    </option>
+                  );
+                })}
               </select>
             </div>
           </div>
@@ -248,6 +363,16 @@ export default function ContactForm() {
               {modalType === 'error' ? 'Slot Unavailable' : 'Booking Confirmed!'}
             </h4>
             <p className="text-gray-600 text-center mb-6">{modalMessage}</p>
+            {modalType === 'success' && whatsAppFallbackUrl && (
+              <a
+                href={whatsAppFallbackUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full mb-3 py-3 rounded-lg border border-green-600 text-green-700 text-center font-medium hover:bg-green-50 transition-colors"
+              >
+                Open WhatsApp Manually
+              </a>
+            )}
             <button
               onClick={() => setShowModal(false)}
               className={`w-full py-3 rounded-lg text-white font-medium transition-colors ${modalType === 'error' ? 'bg-red-600 hover:bg-red-700' : 'bg-green-600 hover:bg-green-700'}`}
