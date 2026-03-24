@@ -362,7 +362,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="text-center">
-            <Link href="https://book.ksdentalclinics.com">
+            <Link href="/book-appointment">
               <Button variant="primary" size="large">
                 Make Appointment
               </Button>

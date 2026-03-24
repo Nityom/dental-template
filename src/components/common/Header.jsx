@@ -136,7 +136,7 @@ const Header = () => {
               whileTap="tap"
               variants={navItemAnimation}
             >
-              <Link href="https://book.ksdentalclinics.com">
+              <Link href="/book-appointment">
                 <Button
                   variant="primary"
                   size="medium"
@@ -270,7 +270,7 @@ const Header = () => {
                   variants={navItemAnimation}
                   whileHover={{ scale: 1.02 }}
                 >
-                  <Link href="https://book.ksdentalclinics.com">
+                  <Link href="/book-appointment">
                     <Button
                       variant="primary"
                       size="medium"

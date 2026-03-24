@@ -119,7 +119,7 @@ export default function ServicesPage() {
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               From preventive care to advanced treatments, we offer a full range of dental services to keep your smile healthy and beautiful.
             </p>
-            <Link href="https://book.ksdentalclinics.com">
+            <Link href="/book-appointment">
               <Button variant="primary" size="large" className="bg-[#1E63D5] hover:bg-[#25D9FF]">
                 Make Appointment
                 <Image src="/images/img_arrowright.svg" alt="Arrow" width={24} height={24} className="ml-2" />

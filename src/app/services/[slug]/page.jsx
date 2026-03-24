@@ -142,7 +142,7 @@ export default function TreatmentLandingPage({ params }) {
             </div>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="https://book.ksdentalclinics.com"
+                href="/book-appointment"
                 className="inline-flex items-center justify-center bg-[#1E63D5] text-white hover:bg-[#25D9FF] px-8 py-4 rounded-lg text-lg font-medium transition-colors"
               >
                 Book Appointment

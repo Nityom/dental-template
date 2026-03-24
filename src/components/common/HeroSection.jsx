@@ -49,7 +49,7 @@ const HeroSection = () => {
               whileTap="tap"
               variants={buttonAnimation}
             >
-              <Link href="https://book.ksdentalclinics.com">
+              <Link href="/book-appointment">
                 <Button variant="primary" size="large" className="bg-[#1E63D5] hover:bg-[#25D9FF] w-full sm:w-auto">
                   Make Appointment
                   <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
