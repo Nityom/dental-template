@@ -1,5 +1,33 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/book-appointment',
+        has: [{ type: 'host', value: 'ksdentalclinics.com' }],
+        destination: 'https://book.ksdentalclinics.com',
+        permanent: true,
+      },
+      {
+        source: '/book-appointment',
+        has: [{ type: 'host', value: 'www.ksdentalclinics.com' }],
+        destination: 'https://book.ksdentalclinics.com',
+        permanent: true,
+      },
+      {
+        source: '/see',
+        has: [{ type: 'host', value: 'ksdentalclinics.com' }],
+        destination: 'https://book.ksdentalclinics.com/see',
+        permanent: true,
+      },
+      {
+        source: '/see',
+        has: [{ type: 'host', value: 'www.ksdentalclinics.com' }],
+        destination: 'https://book.ksdentalclinics.com/see',
+        permanent: true,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

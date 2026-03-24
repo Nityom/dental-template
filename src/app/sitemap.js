@@ -43,13 +43,6 @@ export default function sitemap() {
       images: [`${siteConfig.url}/services/general_dental_checkup.png`],
     },
     {
-      url: `${siteConfig.url}/book-appointment`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-      images: [`${siteConfig.url}/clinic/opd.png`],
-    },
-    {
       url: `${siteConfig.url}/contact`,
       lastModified: now,
       changeFrequency: 'monthly',

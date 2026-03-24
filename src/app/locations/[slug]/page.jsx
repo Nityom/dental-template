@@ -150,7 +150,7 @@ export default function LocationPage({ params }) {
               ))}
             </ul>
             <Link
-              href="/book-appointment"
+              href="https://book.ksdentalclinics.com"
               className="inline-flex items-center justify-center border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-lg font-medium transition-colors"
             >
               Book an Appointment
