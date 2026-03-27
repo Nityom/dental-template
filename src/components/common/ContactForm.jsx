@@ -114,6 +114,7 @@ export default function ContactForm() {
       `Date: ${details.appointmentDate}`,
       `Time: ${details.appointmentTime}`,
       `Dental Problem: ${details.dentalProblem}`,
+      'Booking Confirmed',
     ].join('\n');
 
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
