@@ -156,7 +156,7 @@ export default function ContactForm() {
       : details.fullName;
 
     const message =
-      '*Shahi Dental Clinic*\n\n' +
+      '*KS Dental Clinic & Aesthetics*\n\n' +
       '*Appointment Confirmed*\n\n' +
       `*Patient:* ${patientName}\n` +
       `*Time:* ${formattedTime}\n` +
