@@ -164,7 +164,7 @@ export default function ContactForm() {
       `*Purpose:* ${purposeLabel}\n\n` +
       '*Our Location:* Tap here for Google Maps Directions\n' +
       `${MAP_DIRECTIONS_URL}\n\n` +
-      '*Please call us at 9525050250 if you need to reschedule or cancel.*';
+      '*Please call us at 9288050250 if you need to reschedule or cancel.*';
 
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   }, []);
