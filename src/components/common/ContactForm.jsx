@@ -24,17 +24,51 @@ const TIME_SLOTS = [
   { value: '18:00', label: '06:00 PM' },
 ];
 
+const DENTAL_PROBLEM_LABELS = {
+  checkup: 'Dental Checkup',
+  fillings: 'Dental Fillings',
+  orthodontics: 'Teeth Alignment Orthodontics',
+  implants: 'Dental Implants',
+  'sleep-apnea': 'Sleep Apnea Treatment',
+  'crown-bridge': 'Crown, Bridge, Veneers',
+  periodontal: 'Periodontal Treatment',
+  laser: 'Laser Dental Procedures',
+  scaling: 'Teeth Scaling and Polishing',
+  'root-canal': 'Root Canal & Oral Surgery',
+  'facial-rejuvenation': 'Facial Skin Rejuvenation',
+  'chemical-peel': 'Chemical Peels and Facials',
+  prp: 'PRP and Laser Facial Treatments',
+  'hair-removal': 'Permanent Hair Removal and Shaping',
+  'body-sculpting': 'Body Sculpting and Tattoo Removal',
+  other: 'Other',
+};
+
+const MAP_DIRECTIONS_URL =
+  'https://www.google.com/maps/search/?api=1&query=KS+Dental+%26+Aesthetic+Clinic+Muzaffarpur';
+
 const getTodayLocalDate = () => {
   const now = new Date();
   const timezoneOffsetMs = now.getTimezoneOffset() * 60000;
   return new Date(now.getTime() - timezoneOffsetMs).toISOString().split('T')[0];
 };
 
-const formatDateDDMMYY = (dateString) => {
+const formatDateLong = (dateString) => {
   if (!dateString) return '';
-  const [year, month, day] = dateString.split('-');
-  if (!year || !month || !day) return dateString;
-  return `${day}-${month}-${year.slice(-2)}`;
+  const date = new Date(`${dateString}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return dateString;
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  }).format(date);
+};
+
+const getTimeLabel = (timeValue) => {
+  return TIME_SLOTS.find((slot) => slot.value === timeValue)?.label || timeValue;
+};
+
+const getPurposeLabel = (problemValue) => {
+  return DENTAL_PROBLEM_LABELS[problemValue] || problemValue;
 };
 
 export default function ContactForm() {
@@ -114,16 +148,23 @@ export default function ContactForm() {
   }, [appointmentTime, bookedSlots]);
 
   const buildWhatsAppUrl = useCallback((details) => {
-    const formattedDate = formatDateDDMMYY(details.appointmentDate);
-    const message = [
-      'New Appointment Request',
-      `Name: ${details.fullName}`,
-      `Phone: ${details.phone}`,
-      `Date: ${formattedDate}`,
-      `Time: ${details.appointmentTime}`,
-      `Dental Problem: ${details.dentalProblem}`,
-      'Booking Confirmed',
-    ].join('\n');
+    const formattedDate = formatDateLong(details.appointmentDate);
+    const formattedTime = getTimeLabel(details.appointmentTime);
+    const purposeLabel = getPurposeLabel(details.dentalProblem);
+    const patientName = details.fullName
+      ? `${details.fullName.charAt(0).toUpperCase()}${details.fullName.slice(1)}`
+      : details.fullName;
+
+    const message =
+      '*Shahi Dental Clinic*\n\n' +
+      '*Appointment Confirmed*\n\n' +
+      `*Patient:* ${patientName}\n` +
+      `*Time:* ${formattedTime}\n` +
+      `*Date:* ${formattedDate}\n` +
+      `*Purpose:* ${purposeLabel}\n\n` +
+      '*Our Location:* Tap here for Google Maps Directions\n' +
+      `${MAP_DIRECTIONS_URL}\n\n` +
+      '*Please call us at 9525050250 if you need to reschedule or cancel.*';
 
     return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   }, []);
@@ -350,6 +391,9 @@ export default function ContactForm() {
           <Button variant="primary" size="large" type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? 'Booking...' : 'Book Appointment'}
           </Button>
+          <p className="mt-4 text-sm text-gray-600 leading-relaxed">
+            Note: Please call us at least 2 hours in advance for any rescheduling or cancellations. We look forward to seeing you!
+          </p>
         </form>
       </Card>
 
