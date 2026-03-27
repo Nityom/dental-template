@@ -30,6 +30,13 @@ const getTodayLocalDate = () => {
   return new Date(now.getTime() - timezoneOffsetMs).toISOString().split('T')[0];
 };
 
+const formatDateDDMMYY = (dateString) => {
+  if (!dateString) return '';
+  const [year, month, day] = dateString.split('-');
+  if (!year || !month || !day) return dateString;
+  return `${day}-${month}-${year.slice(-2)}`;
+};
+
 export default function ContactForm() {
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
@@ -107,11 +114,12 @@ export default function ContactForm() {
   }, [appointmentTime, bookedSlots]);
 
   const buildWhatsAppUrl = useCallback((details) => {
+    const formattedDate = formatDateDDMMYY(details.appointmentDate);
     const message = [
       'New Appointment Request',
       `Name: ${details.fullName}`,
       `Phone: ${details.phone}`,
-      `Date: ${details.appointmentDate}`,
+      `Date: ${formattedDate}`,
       `Time: ${details.appointmentTime}`,
       `Dental Problem: ${details.dentalProblem}`,
       'Booking Confirmed',
