@@ -65,7 +65,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <Image 
-              src="/images/hero.jpeg" 
+              src="/images/hero1.png" 
               alt="KS Dental & Aesthetic Clinic" 
               fill
               className="object-cover rounded-2xl"

@@ -21,7 +21,6 @@ const imageExtensions = new Set(['.jpg', '.jpeg', '.png', '.webp']);
 async function getGalleryImages() {
   const imagesPath = path.join(process.cwd(), 'public', 'images');
   const files = await fs.readdir(imagesPath);
-
   return files
     .filter((file) => imageExtensions.has(path.extname(file).toLowerCase()))
     .sort(numericFilenameSorter)

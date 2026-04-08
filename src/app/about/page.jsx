@@ -67,7 +67,7 @@ export default function AboutPage() {
             <div className="relative order-1 lg:order-2 mb-8 lg:mb-0">
               <div className="bg-gray-900 rounded-lg h-64 sm:h-80 lg:h-96 relative overflow-hidden">
                 <Image
-                  src="/images/8image.jpeg"
+                  src="/images/8image.png"
                   alt="About"
                   fill
                   className="object-cover"
@@ -184,7 +184,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative overflow-hidden">
               <Image
-                src="/images/10image.jpeg"
+                src="/images/10image.png"
                 alt="Reception Area"
                 fill
                 className="object-cover"
@@ -192,7 +192,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative overflow-hidden">
               <Image
-                src="/images/8image.jpeg"
+                src="/images/8image.png"
                 alt="Treatment Room"
                 fill
                 className="object-cover"
@@ -200,7 +200,7 @@ export default function AboutPage() {
             </div>
             <div className="bg-gray-900 rounded-lg h-48 sm:h-56 md:h-64 relative sm:col-span-2 lg:col-span-1 overflow-hidden">
               <Image
-                src="/images/9image.jpeg"
+                src="/images/9image.png"
                 alt="Clinic Interior"
                 fill
                 className="object-cover"
