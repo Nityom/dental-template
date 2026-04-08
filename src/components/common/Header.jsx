@@ -119,6 +119,11 @@ const Header = () => {
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
+              <Link href="/gallery" className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === '/gallery' ? 'text-[#1E63D5] font-medium' : ''}`}>
+                Gallery
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
               <Link href="https://blog.ksdentalclinics.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-[#1E63D5] transition-colors">
                 Blogs
               </Link>
@@ -224,6 +229,18 @@ const Header = () => {
                     className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/locations' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
                   >
                     Locations
+                  </Link>
+                </motion.div>
+
+                <motion.div
+                  variants={navItemAnimation}
+                  whileHover={{ backgroundColor: '#F2F8FF' }}
+                >
+                  <Link
+                    href="/gallery"
+                    className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/gallery' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
+                  >
+                    Gallery
                   </Link>
                 </motion.div>
 

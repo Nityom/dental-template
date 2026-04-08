@@ -52,7 +52,7 @@ const homeJsonLd = {
   '@graph': [
     {
       ...getMedicalClinicJsonLd(),
-      image: absoluteUrl('/clinic/interior.png'),
+      image: absoluteUrl('/images/4image.jpeg'),
     },
     getWebsiteJsonLd(),
     getFaqJsonLd(homeFaqs),
@@ -103,9 +103,9 @@ export default function HomePage() {
               </div>
             </div>
             <div className="hidden lg:block w-full lg:w-1/2 order-2 lg:order-1">
-              <div className="bg-gray-900 rounded-lg h-40 sm:h-56 lg:h-80 relative overflow-hidden">
+              <div className="bg-gray-900 rounded-lg h-48 sm:h-64 lg:h-[30rem] relative overflow-hidden">
                 <Image
-                  src="/clinic/opd.png"
+                  src="/images/4image.jpeg"
                   alt="Dental clinic interior"
                   fill
                   className="object-cover"
