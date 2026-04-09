@@ -85,9 +85,9 @@ export default function ContactPage() {
       </section>      {/* Contact Information & Form Section */}
       <section className="py-12 md:py-16 lg:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 gap-12">
             {/* Contact Information */}
-            <div>
+            <div className="order-2">
               <p className="text-[#1E63D5] font-medium mb-4">Contact Information</p>
               <h2 className="text-4xl font-semibold text-gray-900 mb-8 leading-tight">
                 We're Here For You
@@ -173,7 +173,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div>
+            <div className="order-1">
               <ContactForm />
             </div>
           </div>
