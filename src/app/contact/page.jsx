@@ -156,7 +156,7 @@ export default function ContactPage() {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Follow Us</h3>
                 <div className="flex gap-4">
-                  <a href="#" target="_blank" rel="noopener noreferrer" className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
+                  <a href="https://www.facebook.com/people/KS-Dental-Aesthetic-Clinic/61576573643445/?rdid=fcECgAax3SH6Pnau&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GMRCJ4AMo%2F" target="_blank" rel="noopener noreferrer" className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">
                     <Image src="/images/facebook.svg" alt="Facebook" width={24} height={24} />
                   </a>
                   <a href="https://share.google/0e4f22cWCpQTiLwt6" target="_blank" rel="noopener noreferrer" className="bg-gray-200 p-3 rounded-lg hover:bg-[#1E63D5] hover:text-white transition-colors cursor-pointer">

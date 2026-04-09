@@ -90,7 +90,7 @@ const Footer = () => {
                   <Image src="/images/img_icon_02.svg" alt="Instagram" width={16} height={16} />
                 </motion.div>
               </Link>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.facebook.com/people/KS-Dental-Aesthetic-Clinic/61576573643445/?rdid=fcECgAax3SH6Pnau&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GMRCJ4AMo%2F" target="_blank" rel="noopener noreferrer">
                 <motion.div
                   className="bg-[#1E63D5] p-2 md:p-3 rounded-lg"
                   whileHover={{ scale: 1.1 }}
