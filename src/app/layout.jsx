@@ -1,5 +1,6 @@
 import '../styles/index.css';
 import { getGlobalSchemaGraph, siteConfig } from './seo';
+import ConvexClientProvider from '@/components/ConvexClientProvider';
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -72,7 +73,9 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(globalSchema) }}
         />
-        {children}
+        <ConvexClientProvider>
+          {children}
+        </ConvexClientProvider>
       </body>
     </html>
   );

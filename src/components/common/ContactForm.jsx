@@ -2,7 +2,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import Button from '@/components/ui/Button';
 import Card from '@/components/ui/Card';
-import { supabase } from '@/utils/supabase';
+import { useQuery, useMutation } from 'convex/react';
+import { anyApi } from 'convex/server';
 
 const WHATSAPP_NUMBER = '919288050250';
 
@@ -77,7 +78,7 @@ export default function ContactForm() {
   const [appointmentDate, setAppointmentDate] = useState('');
   const [appointmentTime, setAppointmentTime] = useState('');
   const [dentalProblem, setDentalProblem] = useState('');
-  const [bookedSlots, setBookedSlots] = useState([]);
+  
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
@@ -85,46 +86,23 @@ export default function ContactForm() {
   const [whatsAppFallbackUrl, setWhatsAppFallbackUrl] = useState('');
   const minAppointmentDate = getTodayLocalDate();
 
-  const fetchBookedSlots = useCallback(async (date) => {
-    if (!date) {
-      setBookedSlots([]);
-      return;
-    }
+  const bookedSlotsData = useQuery(anyApi.appointments.getBookedSlots, 
+    appointmentDate ? { appointment_date: appointmentDate, doctor_name: 'Dr. Kautilya Swaroop' } : 'skip'
+  );
+  
+  const bookedSlots = bookedSlotsData || [];
 
-    const { data, error } = await supabase
-      .from('appointments')
-      .select('appointment_time')
-      .eq('appointment_date', date);
+  const createAppointment = useMutation(anyApi.appointments.create);
 
-    if (error) {
-      console.error('Error fetching booked slots:', error);
-      setBookedSlots([]);
-      return;
-    }
+  const checkSlotAvailability = useCallback((time) => {
+    if (!time) return true;
+    return !bookedSlots.includes(time);
+  }, [bookedSlots]);
 
-    setBookedSlots(data.map((slot) => slot.appointment_time));
-  }, []);
-
-  const checkSlotAvailability = useCallback(async (date, time) => {
-    if (!date || !time) return true;
-    const { data, error } = await supabase
-      .from('appointments')
-      .select('id')
-      .eq('appointment_date', date)
-      .eq('appointment_time', time)
-      .limit(1);
-
-    if (error) {
-      console.error('Error checking slot:', error);
-      return true; // allow submission if check fails
-    }
-    return data.length === 0;
-  }, []);
-
-  const handleDateTimeChange = useCallback(async (newDate, newTime) => {
+  const handleDateTimeChange = useCallback((newDate, newTime) => {
     if (newDate && newTime) {
-      const available = await checkSlotAvailability(newDate, newTime);
-      if (!available) {
+      if (!checkSlotAvailability(newTime)) {
+        setAppointmentTime('');
         setModalType('error');
         setModalMessage(
           'This slot is already booked! We recommend choosing a different date or time for your appointment.'
@@ -133,10 +111,6 @@ export default function ContactForm() {
       }
     }
   }, [checkSlotAvailability]);
-
-  useEffect(() => {
-    fetchBookedSlots(appointmentDate);
-  }, [appointmentDate, fetchBookedSlots]);
 
   useEffect(() => {
     if (appointmentTime && bookedSlots.includes(appointmentTime)) {
@@ -221,8 +195,7 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
 
-    const available = await checkSlotAvailability(appointmentDate, appointmentTime);
-    if (!available) {
+    if (!checkSlotAvailability(appointmentTime)) {
       if (pendingWhatsAppWindow) pendingWhatsAppWindow.close();
       setModalType('error');
       setModalMessage(
@@ -233,19 +206,44 @@ export default function ContactForm() {
       return;
     }
 
-    const { error } = await supabase.from('appointments').insert([
-      {
+    try {
+      await createAppointment({
         full_name: fullName,
         phone,
         appointment_date: appointmentDate,
         appointment_time: appointmentTime,
+        doctor_name: 'Dr. Kautilya Swaroop',
+        duration_minutes: 30,
         dental_problem: dentalProblem,
-      },
-    ]);
+      });
 
-    if (error) {
+      setModalType('success');
+      setModalMessage('Your appointment has been booked successfully! We will contact you shortly to confirm.');
+      setShowModal(true);
+      
+      const whatsappUrl = buildWhatsAppUrl({
+        fullName,
+        phone,
+        appointmentDate,
+        appointmentTime,
+        dentalProblem,
+      });
+
+      if (pendingWhatsAppWindow) {
+        pendingWhatsAppWindow.location.href = whatsappUrl;
+      } else if (typeof window !== 'undefined') {
+        window.open(whatsappUrl, '_blank');
+      }
+
+      setWhatsAppFallbackUrl(whatsappUrl);
+      setFullName('');
+      setPhone('');
+      setAppointmentDate('');
+      setAppointmentTime('');
+      setDentalProblem('');
+    } catch (error) {
       if (pendingWhatsAppWindow) pendingWhatsAppWindow.close();
-      if (error.code === '23505') {
+      if (error.message && error.message.includes('already booked')) {
         setModalType('error');
         setModalMessage(
           'This slot was just booked by someone else! Please choose a different date or time.'
@@ -256,34 +254,9 @@ export default function ContactForm() {
         console.error('Booking error:', error);
       }
       setShowModal(true);
+    } finally {
       setIsSubmitting(false);
-      return;
     }
-
-    setModalType('success');
-    setModalMessage('Your appointment has been booked successfully! We will contact you shortly to confirm.');
-    setShowModal(true);
-    const whatsappUrl = buildWhatsAppUrl({
-      fullName,
-      phone,
-      appointmentDate,
-      appointmentTime,
-      dentalProblem,
-    });
-
-    if (pendingWhatsAppWindow) {
-      pendingWhatsAppWindow.location.href = whatsappUrl;
-    } else if (typeof window !== 'undefined') {
-      window.open(whatsappUrl, '_blank');
-    }
-
-    setWhatsAppFallbackUrl(whatsappUrl);
-    setFullName('');
-    setPhone('');
-    setAppointmentDate('');
-    setAppointmentTime('');
-    setDentalProblem('');
-    setIsSubmitting(false);
   };
 
   return (
