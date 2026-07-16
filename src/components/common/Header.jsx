@@ -7,6 +7,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { headerAnimation, navItemAnimation, mobileMenuAnimation } from '@/utils/animations';
 import Button from '@/components/ui/Button';
 
+const navItems = [
+  { label: "Home", href: "/", internal: true },
+  { label: "About Us", href: "/about", internal: true },
+  { label: "Services", href: "/services", internal: true },
+  { label: "Locations", href: "/locations", internal: true },
+  { label: "Gallery", href: "/gallery", internal: true },
+  { label: "Blogs", href: "https://blog.ksdentalclinics.com", internal: false },
+  { label: "Contact Us", href: "/contact", internal: true },
+  { label: "Admin", href: "https://admin.ksdentalclinics.com", internal: false },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -65,8 +76,12 @@ const Header = () => {
         animate="show"
         variants={headerAnimation}
       >
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-8 flex items-center justify-between">
+          <motion.div
+            className="shrink-0"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
             <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/dental_logo.svg"
@@ -97,45 +112,26 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
-              <Link href="/" className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === '/' ? 'text-[#1E63D5] font-medium' : ''}`}>
-                Home
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
-              <Link href="/about" className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === '/about' ? 'text-[#1E63D5] font-medium' : ''}`}>
-                About Us
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
-              <Link href="/services" className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === '/services' ? 'text-[#1E63D5] font-medium' : ''}`}>
-                Services
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
-              <Link href="/locations" className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === '/locations' ? 'text-[#1E63D5] font-medium' : ''}`}>
-                Locations
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
-              <Link href="/gallery" className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === '/gallery' ? 'text-[#1E63D5] font-medium' : ''}`}>
-                Gallery
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
-              <Link href="https://blog.ksdentalclinics.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-[#1E63D5] transition-colors">
-                Blogs
-              </Link>
-            </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
-              <Link href="/contact" className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === '/contact' ? 'text-[#1E63D5] font-medium' : ''}`}>
-                Contact Us
-              </Link>
-            </motion.div>
+          <nav className="hidden lg:flex items-center gap-5">
+            {navItems.map((item, index) => (
+              <motion.div key={index} whileHover={{ scale: 1.1 }} variants={navItemAnimation}>
+                {item.internal ? (
+                  <Link href={item.href} className={`text-gray-900 hover:text-[#1E63D5] transition-colors ${pathname === item.href ? 'text-[#1E63D5] font-medium' : ''}`}>
+                    {item.label}
+                  </Link>
+                ) : (
+                  <Link href={item.href} target="_blank" rel="noopener noreferrer"
+                    className={`relative text-[15px] font-medium transition-colors duration-300 hover:text-[#1E63D5]
+${pathname === item.href ? "text-[#1E63D5]" : "text-gray-800"}`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </motion.div>
+            ))}
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 shrink-0">
             <motion.div
               whileHover="hover"
               whileTap="tap"
@@ -145,7 +141,7 @@ const Header = () => {
                 <Button
                   variant="primary"
                   size="medium"
-                  className="hidden sm:flex bg-[#1E63D5] hover:bg-[#25D9FF] px-4 py-2 md:px-6 md:py-3"
+                  className="hidden lg:flex rounded-full px-6 py-3 bg-[#1E63D5] hover:bg-[#25D9FF] transition-all duration-300"
                 >
                   Book Appointment
                   <Image src="/images/img_arrowright.svg" alt="Arrow" width={20} height={20} className="ml-2" />
@@ -184,106 +180,34 @@ const Header = () => {
               variants={mobileMenuAnimation}
             >
               <nav className="flex flex-col py-2">
-                <motion.div
-                  variants={navItemAnimation}
-                  whileHover={{ backgroundColor: '#F2F8FF' }}
-                >
-                  <Link
-                    href="/"
-                    className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
+                {navItems.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    variants={navItemAnimation}
+                    whileHover={{ backgroundColor: '#F2F8FF' }}
                   >
-                    Home
-                  </Link>
-                </motion.div>
+                    {item.internal ? (
+                      <Link
+                        href={item.href}
+                        className={`px-4 py-3 block ${index !== navItems.length - 1 ? 'border-b border-gray-100' : ''} ${pathname === item.href ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
+                      >
+                        {item.label}
+                      </Link>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`px-4 py-3 block text-gray-900 ${index !== navItems.length - 1 ? 'border-b border-gray-100' : ''}`}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </motion.div>
+                ))}
 
                 <motion.div
-                  variants={navItemAnimation}
-                  whileHover={{ backgroundColor: '#F2F8FF' }}
-                >
-                  <Link
-                    href="/about"
-                    className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/about' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
-                  >
-                    About Us
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  variants={navItemAnimation}
-                  whileHover={{ backgroundColor: '#F2F8FF' }}
-                >
-                  <Link
-                    href="/services"
-                    className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/services' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
-                  >
-                    Services
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  variants={navItemAnimation}
-                  whileHover={{ backgroundColor: '#F2F8FF' }}
-                >
-                  <Link
-                    href="/locations"
-                    className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/locations' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
-                  >
-                    Locations
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  variants={navItemAnimation}
-                  whileHover={{ backgroundColor: '#F2F8FF' }}
-                >
-                  <Link
-                    href="/gallery"
-                    className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/gallery' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
-                  >
-                    Gallery
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  variants={navItemAnimation}
-                  whileHover={{ backgroundColor: '#F2F8FF' }}
-                >
-                  <Link
-                    href="/services/orthodontics-braces-aligners"
-                    className={`px-4 py-3 border-b border-gray-100 block ${pathname === '/services/orthodontics-braces-aligners' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
-                  >
-                    Treatments
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  variants={navItemAnimation}
-                  whileHover={{ backgroundColor: '#F2F8FF' }}
-                >
-                  <Link
-                    href="https://blog.ksdentalclinics.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-3 border-b border-gray-100 block text-gray-900"
-                  >
-                    Blogs
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  variants={navItemAnimation}
-                  whileHover={{ backgroundColor: '#F2F8FF' }}
-                >
-                  <Link
-                    href="/contact"
-                    className={`px-4 py-3 block ${pathname === '/contact' ? 'bg-[#F2F8FF] text-[#1E63D5]' : 'text-gray-900'}`}
-                  >
-                    Contact Us
-                  </Link>
-                </motion.div>
-
-                <motion.div
-                  className="px-4 py-4"
+                  className="px-4 py-2 pb-4"
                   variants={navItemAnimation}
                   whileHover={{ scale: 1.02 }}
                 >
